@@ -32,4 +32,8 @@ console.log(rickAndMortyCharacters1[4]);
 
 // 1.6 Elimina el segundo elemento del array y muestra el array por consola.
 delete rickAndMortyCharacters1[1];
+
+/** rickAndMortyCharacters1.splice(1, 3) --> borra el segundo elemento(es la posición que le he dado en el 1),
+ *  y los dos siguientes( hasta 3 que es el segundo dato que he puesto en el splice)
+ */
 console.log(rickAndMortyCharacters1);
