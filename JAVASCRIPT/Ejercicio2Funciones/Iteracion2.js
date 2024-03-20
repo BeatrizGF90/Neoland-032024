@@ -22,6 +22,7 @@ const findLongestWord = (array) => {
 console.log(findLongestWord(avengers));
 console.log(findLongestWord(capitales));
 
+// Otra manera de hacerlo
 // const findLongestWord = (avengers) => {
 //   let maxLongitud = 0;
 //   for (let i = 1; i < avengers.length; i++) {
