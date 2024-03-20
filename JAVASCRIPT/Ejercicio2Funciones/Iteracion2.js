@@ -6,6 +6,8 @@ const avengers = [
   "Spiderman",
   "Captain M.",
 ];
+const capitales = ["Madrid", "Lisboa", "Berlin", "Paris", "Copenague"];
+
 // function findLongestWord(param) {
 
 const findLongestWord = (array) => {
@@ -18,3 +20,13 @@ const findLongestWord = (array) => {
   return palabraLarga;
 };
 console.log(findLongestWord(avengers));
+console.log(findLongestWord(capitales));
+
+// const findLongestWord = (avengers) => {
+//   let maxLongitud = 0;
+//   for (let i = 1; i < avengers.length; i++) {
+//     if (avengers[i].length > avengers[maxLongitud].length) maxLongitud = i;
+//   }
+//   return avengers[maxLongitud];
+// };
+// console.log(findLongestWord(avengers));
