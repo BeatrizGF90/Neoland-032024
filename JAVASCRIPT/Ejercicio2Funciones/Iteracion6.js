@@ -16,5 +16,11 @@ const duplicates = [
   "soda",
 ];
 const removeDuplicates = (param) => {
-  // insert code
+  const arrayNoRepetidos = [];
+  for (let i = 0; i < param.length; i++) {
+    !arrayNoRepetidos.includes(param[i]) && arrayNoRepetidos.push(param[i]);
+  }
+  return arrayNoRepetidos;
 };
+const noRepetidos = removeDuplicates(duplicates);
+console.log("noRepetidos: ", noRepetidos);
