@@ -1,0 +1,35 @@
+div,
+p,
+span,
+a {
+  height: 40px;
+  width: 150 px;
+  margin: 10px;
+  padding: 10px;
+}
+
+div {
+  display: inline-block;
+  background-color: #e74c3c; /*El div tiene un color #e74c3c.*/
+}
+
+p {
+  display: inline-block;
+  background-color: #9b59b6; /*El párrafo tiene un color #9b59b6.*/
+}
+
+span {
+  display: inline-block;
+  background-color: #3498db; /*El span tiene un color #3498db.*/
+}
+
+a {
+  /* display: inline-block; */
+  background-color: #2ecc71; /*El anchor tiene un color #2ecc71.*/
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}

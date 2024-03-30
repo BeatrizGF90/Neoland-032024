@@ -1,0 +1,21 @@
+/* 
+- El botón tiene que aumentar su escala un 1.2.
+- La transición dura 0.3 segundos.
+- La transición va tanto en un sentido como en otro, disminuyendo su escala al dejar de hacer hover. */
+
+#transition-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+button {
+  border-radius: 8px;
+  border: none;
+  background-color: #2563eb;
+  color: white;
+  font-size: 18px;
+  padding: 16px 24px;
+  text-align: center;
+}

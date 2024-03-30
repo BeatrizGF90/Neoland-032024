@@ -1,0 +1,35 @@
+/* 
+- El primer div y el tercer div tienen 32 píxeles entre el texto y el borde.
+- El primer div tiene 12 pixeles entre si mismo y otro elemento.
+- Hay un hueco de 48 pixeles entre el segundo div y el tercer div.
+- El tercer div está alineado a la derecha y utiliza solamente margin para ello. */
+
+body {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.one {
+  background: pink;
+  border: 3px solid black;
+  /* CAMBIAR */
+  padding: 32px;
+  margin: 12px;
+}
+
+.two {
+  background: lightblue;
+  border: 3px solid black;
+  /* CAMBIAR */
+  margin-bottom: 48px;
+}
+
+.three {
+  background: peachpuff;
+  border: 3px solid black;
+  width: 200px;
+  /* CAMBIAR */
+  padding: 32px;
+  margin-left: 325px;
+  /* margin-left: auto; pero en la imagen me parece que el div 3 está un poco más a la izq que el div 2*/
+}

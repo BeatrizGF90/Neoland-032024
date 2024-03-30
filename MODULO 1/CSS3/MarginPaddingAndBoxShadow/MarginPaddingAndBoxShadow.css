@@ -1,0 +1,35 @@
+/* 
+- El titulo tiene un margen a la izquierda de 4rem.
+- La imagen tiene que tener una sombra de 10px 5px 5px con un color black semi-transparente.
+- Hay que centrar la imagen en base a su contenedor con el margen automático haciendo uso de la propiedad display correspondiente.
+- Los párrafos tienen un padding de 10rem solo a los lados horizontales.
+- Los párrafos tienen un margen de 4 rem en todas partes menos abajo.
+- Tanto el padding como el margen en los párrafos tiene que ser declarado en una sola línea. */
+
+@import url("https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@300;400;700&display=swap");
+
+* {
+  font-family: "Anek Telugu", sans-serif;
+}
+
+h1 {
+  margin-left: 4rem; /*El titulo tiene un margen a la izquierda de 4rem.*/
+}
+
+.image-container {
+  width: 100%;
+  display: flex; /*Hay que centrar la imagen en base a su contenedor con el margen automático haciendo uso de la propiedad display correspondiente.*/
+  justify-content: center;
+}
+img {
+  box-shadow: 10px 5px 5px black; /* La imagen tiene que tener una sombra de 10px 5px 5px con un color black semi-transparente.*/
+  /* ¿Cómo se hace el negro casi transparente? */
+}
+
+p {
+  padding: 0rem 10rem;
+  margin: 4rem 4rem 0rem 4rem; /*Tanto el padding como el margen en los párrafos tiene que ser declarado en una sola línea. */
+
+  /*Los párrafos tienen un padding de 10rem solo a los lados horizontales.*/
+  /* Los párrafos tienen un margen de 4 rem en todas partes menos abajo.*/
+}
