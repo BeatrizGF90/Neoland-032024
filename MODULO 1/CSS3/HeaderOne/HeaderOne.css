@@ -24,7 +24,7 @@ html {
   height: 10vh; /*Para cambiar la altura utilizar vh en vez de % */
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 

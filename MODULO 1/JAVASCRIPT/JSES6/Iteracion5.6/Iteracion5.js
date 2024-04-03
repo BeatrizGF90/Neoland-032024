@@ -12,6 +12,10 @@ const streamers3 = [
 const input = document.querySelector("[data-function=toFilterStreamers]");
 
 const filterString = (inputValue) => {
+  // Necesito el if para que si yo no meto nada y pulso enter no me salga todo el array.
+  if (inputValue.lenght <= 0) {
+    return;
+  }
   const nuevoStreamers3 = streamers3.filter((user) =>
     user.name.toLowerCase().includes(inputValue)
   );
