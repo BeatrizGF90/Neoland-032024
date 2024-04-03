@@ -1,0 +1,100 @@
+/* 
+- El botón de continuar tiene que estar alineado a la izquierda.
+- Todo el modal tiene padding.
+- Al igual que el botón continuar, el header y el texto tienen que estar alineados en la misma linea.
+- El icono de alerta, el header y el cierre tienen que estar alineados.
+- Todos los elementos globales tienen el mismo gap. */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  background: #aaa;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: white;
+  width: 480px;
+  border-radius: 5px;
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+  color: royalblue;
+  font-size: 26px;
+  font-weight: 700;
+  background: lavender;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3% 8% 3% 3%;
+}
+
+.close-button {
+  background: #eee;
+  border-radius: 50%;
+  color: #888;
+  font-weight: 700;
+  font-size: 26px;
+  height: 42px;
+  width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3% 3% 3% 8%;
+}
+
+button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+button.continue {
+  background: royalblue;
+  border: 1px solid royalblue;
+  color: white;
+  margin: 5% 1% 5% 4%;
+}
+
+button.cancel {
+  background: white;
+  border: 1px solid #ddd;
+  color: royalblue;
+}
+.header {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.text {
+  text-align: center;
+}
+.enLinea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,79 @@
+/* 
+- Hay espacio entre todos los elementos y el borde del encabezado (la cantidad específica de px no importa aquí).
+- El logotipo está centrado vertical y horizontalmente.
+- Los elementos de la lista son horizontales y están centrados verticalmente dentro del encabezado.
+- Los enlaces a la izquierda y los enlaces a la derecha se empujan completamente hacia la izquierda y hacia la derecha, y permanecen en el borde del encabezado cuando se cambia el tamaño de la página.
+- La solución no utiliza floats, inline-blocks o positions absoluts.
+- Los elementos por defecto tienen margenes y padding, hay que quitarlos mediante un reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* Esas medidas son el viewPort */
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+.header {
+  font-family: monospace;
+  background: #fa5252;
+  height: 10vh; /*Para cambiar la altura utilizar vh en vez de % */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Coming Soon", cursive;
+  font-style: normal;
+  font-size: 35px;
+  font-weight: 900;
+  color: black;
+  background: #82c91e;
+  padding: 0.5% 3%;
+  margin: 0.2% 8%;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+
+ul {
+  /* this removes the dots on the list items*/
+  list-style-type: none;
+  margin: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  font-family: "Coming Soon", cursive;
+  font-style: normal;
+  font-size: 22px;
+  font-weight: 900;
+  background: #ab17b9;
+  padding: 7px 35px;
+  color: black;
+  /* this removes the line under the links */
+  text-decoration: none;
+  margin: 10px;
+  border: 2px solid black;
+}
+.left-links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.right-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

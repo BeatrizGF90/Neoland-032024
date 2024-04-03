@@ -3,11 +3,24 @@
 - La transición dura 0.3 segundos.
 - La transición va tanto en un sentido como en otro, disminuyendo su escala al dejar de hacer hover. */
 
+@keyframes cambiarEscala {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
 #transition-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  animation: cambiarEscala 0.3s;
 }
 
 button {
