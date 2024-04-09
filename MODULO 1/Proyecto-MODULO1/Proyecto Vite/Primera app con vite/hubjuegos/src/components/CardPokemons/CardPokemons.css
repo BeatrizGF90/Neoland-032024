@@ -1,13 +1,14 @@
 /*CardPokemons.css ------> src/components/CardPokemons/CardPokemons.css*/
 .figurePokemon {
-  width: 200px;
-  height: 280px;
-  border-radius: 12px;
+  width: 300px;
+  height: 300px;
+  border-radius: 360px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: 1rem;
+  font-family: "Caveat", cursive;
 
   & img {
     height: 180px;
@@ -32,10 +33,20 @@
 }
 figure.grass {
   border: 10px solid #63bb5b;
+  &:hover {
+    -webkit-box-shadow: 5px -2px 36px 12px #63bb5b;
+    -moz-box-shadow: 5px -2px 36px 12px #63bb5b;
+    box-shadow: 5px -2px 36px 12px #63bb5b;
+  }
 }
 
 figure.bug {
   border: 10px solid #8fc12c;
+  &:hover {
+    -webkit-box-shadow: 5px -2px 36px 12px #8fc12c;
+    -moz-box-shadow: 5px -2px 36px 12px #8fc12c;
+    box-shadow: 5px -2px 36px 12px #8fc12c;
+  }
 }
 .bug {
   background-color: #8fc12c80;
@@ -43,18 +54,33 @@ figure.bug {
 
 figure.dark {
   border: 10px solid #5a5366;
+  &:hover {
+    -webkit-box-shadow: 5px -2px 36px 12px #5a5366;
+    -moz-box-shadow: 5px -2px 36px 12px #5a5366;
+    box-shadow: 5px -2px 36px 12px #5a5366;
+  }
 }
 .dark {
   background-color: #5a536687;
 }
 figure.dragon {
   border: 10px solid #0a6dc4;
+  &:hover {
+    -webkit-box-shadow: 5px -2px 36px 12px #0a6dc4;
+    -moz-box-shadow: 5px -2px 36px 12px #0a6dc4;
+    box-shadow: 5px -2px 36px 12px #0a6dc4;
+  }
 }
 .dragon {
   background-color: #0a6dc482;
 }
 figure.electric {
   border: 10px solid #f3d13b;
+  &:hover {
+    -webkit-box-shadow: 5px -2px 36px 12px #f3d13b;
+    -moz-box-shadow: 5px -2px 36px 12px #f3d13b;
+    box-shadow: 5px -2px 36px 12px #f3d13b;
+  }
 }
 .electric {
   background-color: #f3d13b75;
@@ -62,12 +88,22 @@ figure.electric {
 
 figure.fairy {
   border: 10px solid #ec8fe6;
+  &:hover {
+    -webkit-box-shadow: 5px -2px 36px 12px #ec8fe6;
+    -moz-box-shadow: 5px -2px 36px 12px #ec8fe6;
+    box-shadow: 5px -2px 36px 12px #ec8fe6;
+  }
 }
 .fairy {
   background-color: #ec8fe67e;
 }
 figure.fighting {
   border: 10px solid #ce4068;
+  &:hover {
+    -webkit-box-shadow: 5px -2px 36px 12px #ce4068;
+    -moz-box-shadow: 5px -2px 36px 12px #ce4068;
+    box-shadow: 5px -2px 36px 12px #ce4068;
+  }
 }
 .fighting {
   background-color: #ce406884;
@@ -75,6 +111,11 @@ figure.fighting {
 
 figure.fire {
   border: 10px solid #ff9b54;
+  &:hover {
+    -webkit-box-shadow: 5px -2px 36px 12px #ff9b54;
+    -moz-box-shadow: 5px -2px 36px 12px #ff9b54;
+    box-shadow: 5px -2px 36px 12px #ff9b54;
+  }
 }
 .fire {
   background-color: #ff9b546f;
@@ -82,12 +123,22 @@ figure.fire {
 
 figure.flying {
   border: 10px solid #8fa8dd;
+  &:hover {
+    -webkit-box-shadow: 5px -2px 36px 12px #8fa8dd;
+    -moz-box-shadow: 5px -2px 36px 12px #8fa8dd;
+    box-shadow: 5px -2px 36px 12px #8fa8dd;
+  }
 }
 .flying {
   background-color: #8fa8dd7c;
 }
 figure.ghost {
   border: 10px solid #5269ac;
+  &:hover {
+    -webkit-box-shadow: 5px -2px 36px 12px #5269ac;
+    -moz-box-shadow: 5px -2px 36px 12px #5269ac;
+    box-shadow: 5px -2px 36px 12px #5269ac;
+  }
 }
 .ghost {
   background-color: #5269ac7e;
@@ -95,18 +146,33 @@ figure.ghost {
 
 figure.ground {
   border: 10px solid #d97746;
+  &:hover {
+    -webkit-box-shadow: 5px -2px 36px 12px #d97746;
+    -moz-box-shadow: 5px -2px 36px 12px #d97746;
+    box-shadow: 5px -2px 36px 12px #d97746;
+  }
 }
 .ground {
   background-color: #d977467c;
 }
 figure.ice {
   border: 10px solid #74cec1;
+  &:hover {
+    -webkit-box-shadow: 5px -2px 36px 12px #74cec1;
+    -moz-box-shadow: 5px -2px 36px 12px #74cec1;
+    box-shadow: 5px -2px 36px 12px #74cec1;
+  }
 }
 .ice {
   background-color: #74cec17e;
 }
 figure.normal {
   border: 10px solid #9099a1;
+  &:hover {
+    -webkit-box-shadow: 5px -2px 36px 12px #9099a1;
+    -moz-box-shadow: 5px -2px 36px 12px #9099a1;
+    box-shadow: 5px -2px 36px 12px #9099a1;
+  }
 }
 .normal {
   background-color: #9099a17b;
@@ -114,6 +180,11 @@ figure.normal {
 
 figure.poison {
   border: 10px solid #aa6ac8;
+  &:hover {
+    -webkit-box-shadow: 5px -2px 36px 12px #aa6ac8;
+    -moz-box-shadow: 5px -2px 36px 12px #aa6ac8;
+    box-shadow: 5px -2px 36px 12px #aa6ac8;
+  }
 }
 .poison {
   background-color: #aa6ac87a;
@@ -121,12 +192,22 @@ figure.poison {
 
 figure.psychic {
   border: 10px solid #f97176;
+  &:hover {
+    -webkit-box-shadow: 5px -2px 36px 12px #f97176;
+    -moz-box-shadow: 5px -2px 36px 12px #f97176;
+    box-shadow: 5px -2px 36px 12px #f97176;
+  }
 }
 .psychic {
   background-color: #f971767e;
 }
 figure.rock {
   border: 10px solid #c7b78b;
+  &:hover {
+    -webkit-box-shadow: 5px -2px 36px 12px #c7b78b;
+    -moz-box-shadow: 5px -2px 36px 12px #c7b78b;
+    box-shadow: 5px -2px 36px 12px #c7b78b;
+  }
 }
 .rock {
   background-color: #c7b78b78;
@@ -134,13 +215,24 @@ figure.rock {
 
 figure.steel {
   border: 10px solid #5a8ea1;
+  &:hover {
+    -webkit-box-shadow: 5px -2px 36px 12px #5a8ea1;
+    -moz-box-shadow: 5px -2px 36px 12px #5a8ea1;
+    box-shadow: 5px -2px 36px 12px #5a8ea1;
+  }
 }
 .steel {
   background-color: #5a8ea17e;
 }
 figure.water {
   border: 10px solid #4d91d5;
+  &:hover {
+    -webkit-box-shadow: 5px -2px 36px 12px #4d91d5;
+    -moz-box-shadow: 5px -2px 36px 12px #4d91d5;
+    box-shadow: 5px -2px 36px 12px #4d91d5;
+  }
 }
+
 .water {
   background-color: #4d91d575;
 }

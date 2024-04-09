@@ -1,0 +1,24 @@
+.container {
+  background: dodgerblue;
+  border: 4px solid midnightblue;
+  width: 400px;
+  height: 300px;
+  display: grid;
+  grid-template-rows: 25% 25% 25% 25%; /* 4 filas, tres filas con esos tamaños respectivamente */
+  grid-template-columns: 25% 25% 25% 25%; /* 4 filas, tres columnas con esos tamaños respectivamente */
+}
+
+.box {
+  background: palevioletred;
+  font-weight: bold;
+  text-align: center;
+  border: 6px solid maroon;
+  /* width: 80px; Para que haga caso el grid row y gris column no hay que poner límites de ancho ni alto
+  height: 80px; */
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-row: 2/4;
+  grid-column: 2/4;
+}

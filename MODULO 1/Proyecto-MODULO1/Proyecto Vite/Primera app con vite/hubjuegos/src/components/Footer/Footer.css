@@ -2,18 +2,23 @@
 footer {
   height: 10vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  background: #0d0d0d;
-  -webkit-box-shadow: 0px 8px 30px -3px rgba(0, 0, 0, 0.61);
-  -moz-box-shadow: 0px 8px 30px -3px rgba(0, 0, 0, 0.61);
-  box-shadow: 0px 8px 30px -3px rgba(0, 0, 0, 0.61);
   position: fixed;
-  bottom: 0;
   width: 100%;
+  background: #05020b;
+  background-image: url("https://res.cloudinary.com/dszkfnjwy/image/upload/c_pad,w_175,h_175/v1712328781/Picachu_fondo_dfbm05.png");
+  -webkit-box-shadow: 0px -10px 33px -11px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px -10px 33px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px -10px 33px -11px rgba(0, 0, 0, 0.75);
+  bottom: 0;
   z-index: 100;
   color: #0def03;
   & span {
     color: white;
+    font-size: 5vh;
+  }
+  & h3 {
+    font-size: 5vh;
   }
 }

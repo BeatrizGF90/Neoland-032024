@@ -12,5 +12,81 @@
 .buttonFilter {
   width: 5rem;
   height: 2rem;
-  border-radius: 5px;
+  border-radius: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.buttonFilter.grass {
+  border: 3px solid #63bb5b;
+}
+
+.buttonFilter.bug {
+  border: 3px solid #8fc12c;
+}
+
+.buttonFilter.dark {
+  border: 3px solid #5a5366;
+}
+
+.buttonFilter.dragon {
+  border: 3px solid #0a6dc4;
+}
+
+.buttonFilter.electric {
+  border: 3px solid #f3d13b;
+}
+
+.buttonFilter.fairy {
+  border: 3px solid #ec8fe6;
+}
+
+.buttonFilter.fighting {
+  border: 3px solid #ce4068;
+}
+
+.buttonFilter.fire {
+  border: 3px solid #ff9b54;
+}
+
+.buttonFilter.flying {
+  border: 3px solid #8fa8dd;
+}
+
+.buttonFilter.ghost {
+  border: 3px solid #5269ac;
+}
+
+.buttonFilter.ground {
+  border: 3px solid #d97746;
+}
+
+.buttonFilter.ice {
+  border: 3px solid #74cec1;
+}
+
+.buttonFilter.normal {
+  border: 3px solid #9099a1;
+}
+
+.buttonFilter.poison {
+  border: 3px solid #aa6ac8;
+}
+
+.buttonFilter.psychic {
+  border: 3px solid #f97176;
+}
+
+.buttonFilter.rock {
+  border: 3x solid #c7b78b;
+}
+
+.buttonFilter.steel {
+  border: 3x solid #5a8ea1;
+}
+
+.buttonFilter.water {
+  border: 3px solid #4d91d5;
 }

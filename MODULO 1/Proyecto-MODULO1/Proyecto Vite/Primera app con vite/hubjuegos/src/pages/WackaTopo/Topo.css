@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.containerTopo {
+  height: 100vh;
+  width: 100%;
+  background-color: #eed08f;
+  text-align: center;
+}
+
+h1 {
+  margin: 20px 0 10px 0;
+  color: #333;
+  font-size: 45px;
+}
+p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  &:hover {
+    transform: scale(0.9);
+    -webkit-box-shadow: 1px -1px 12px 8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px -1px 12px 8px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px -1px 12px 8px rgba(0, 0, 0, 0.75);
+  }
+}
+
+#gameArea {
+  position: relative;
+  border: 2px solid #9c7712;
+  margin: 10px auto;
+  width: 95%;
+  height: 95%;
+
+  & #topo {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    /* transform: translate(-50%, -50%); */
+    /* top: 50%; /* se lo voy a meter en el js */
+    /* left: 50%;  se lo voy a meter en el js*/
+    /*display: none; /* se lo voy a meter en el js */
+  }
+}

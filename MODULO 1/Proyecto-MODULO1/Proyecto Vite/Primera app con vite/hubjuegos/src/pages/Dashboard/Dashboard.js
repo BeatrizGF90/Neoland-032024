@@ -15,7 +15,7 @@ const template = () => `
         </figure>
       </li>
       <li>
-        <figure>
+        <figure id="navigateTopo">
           <img
             src="https://res.cloudinary.com/dq186ej4c/image/upload/v1689761641/pngwing.com_1_iq8zfk.png"
             alt=" go to wacka topo game"
@@ -24,7 +24,7 @@ const template = () => `
         </figure>
       </li>
       <li>
-        <figure>
+        <figure id="navigateMemory">
           <img
             src="https://res.cloudinary.com/dq186ej4c/image/upload/v1689761735/6168776_kfna36.png"
             alt="go to memory game"
@@ -32,17 +32,39 @@ const template = () => `
           <h2>MEMORY GAME</h2>
         </figure>
       </li>
+      <li>
+        <figure id="navigateTresEnRaya">
+          <img
+            src="https://res.cloudinary.com/dszkfnjwy/image/upload/v1712398821/TresEnRaya_uckgqq.jpg"
+            alt="go to page tres en raya"
+          />
+          <h2>TRES EN RAYA</h2>
+        </figure>
+      </li>
     </ul>
   </div>
 `;
 
 const addEventListeners = () => {
-  /** le damos el evento al boton de pokemon que es la unica pagina de contenido por
-   * ahora esta creada en el proyecto
-   */
+  /** le damos el evento al boton de cada juego que se vaya creando */
+
   const navigatePokemon = document.getElementById("navigatePokemon");
   navigatePokemon.addEventListener("click", () => {
     initControler("Pokemon");
+  });
+
+  const navigateMemory = document.getElementById("navigateMemory");
+  navigateMemory.addEventListener("click", () => {
+    initControler("Memory");
+  });
+
+  const navigateTopo = document.getElementById("navigateTopo");
+  navigateTopo.addEventListener("click", () => {
+    initControler("Topo");
+  });
+  const navigateTresEnRaya = document.getElementById("navigateTresEnRaya");
+  navigateTresEnRaya.addEventListener("click", () => {
+    initControler("TresEnRaya");
   });
 };
 

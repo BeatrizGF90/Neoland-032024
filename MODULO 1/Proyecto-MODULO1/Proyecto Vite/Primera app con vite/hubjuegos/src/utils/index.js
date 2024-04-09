@@ -6,3 +6,5 @@ export * from "./axios";
 export * from "./dataPokemon";
 export * from "./typePokemon";
 export * from "./paginacion";
+export * from "./memory";
+export * from "./tresEnRaya";

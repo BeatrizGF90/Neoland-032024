@@ -1,0 +1,94 @@
+.container {
+  /* max-width: 800px; */
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background: rgb(234, 95, 95);
+  box-sizing: content-box;
+  width: 36em;
+  height: 36em;
+  padding: 3.5em 3.5em;
+  position: absolute;
+  left: 35%;
+  top: 25%;
+  margin: auto;
+  border-radius: 25px;
+  box-shadow: 0 0 12px 20px rgba(137, 36, 36, 0.2);
+}
+.fondo {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: url(https://res.cloudinary.com/dszkfnjwy/image/upload/v1712648992/pensarTresEnRaya_u2hn2f.gif);
+  top: 130px;
+  right: 0px;
+}
+
+.input-container {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+input {
+  margin: 5px;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  gap: 2px;
+  width: 244px;
+  height: 244px;
+  margin: 20px auto;
+  border: 2px solid #333;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  &:hover {
+    transform: scale(0.9);
+    -webkit-box-shadow: 1px -1px 12px 8px rgba(145, 29, 29, 1);
+    -moz-box-shadow: 1px -1px 12px 8px rgba(145, 29, 29, 1);
+    box-shadow: 1px -1px 12px 8px rgba(145, 29, 29, 1);
+  }
+}
+
+.info-msg {
+  display: none;
+  margin-top: 10px;
+}
+
+.message {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+}
+.timer {
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+}
+#info-btn {
+  display: none; /* Oculta el botón de información */
+}
