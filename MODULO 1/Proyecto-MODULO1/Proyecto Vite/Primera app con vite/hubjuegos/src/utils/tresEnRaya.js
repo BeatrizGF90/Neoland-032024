@@ -1,8 +1,7 @@
 import { getStateMemory, setStateMemory } from "../global/state/memoryState";
 import Swal from "sweetalert2";
+import { PrintTresEnRayaPage } from "../pages";
 
-const timerDisplay = document.getElementById("timer");
-const messageDisplay = document.getElementById("message");
 let timer;
 let board = [
   ["", "", ""],
@@ -12,12 +11,6 @@ let board = [
 
 // Función para iniciar el temporizador
 export const startTimer = () => {
-  resetGame();
-  board = [
-    ["", "", ""],
-    ["", "", ""],
-    ["", "", ""],
-  ];
   timer = setInterval(() => {
     setStateMemory("timeLeft", getStateMemory("timeLeft") - 1);
     const timerDisplay = document.getElementById("timer");
@@ -51,6 +44,12 @@ export const resetTimer = () => {
 
 // Reiniciar juego
 const resetGame = () => {
+  board = [
+    ["", "", ""],
+    ["", "", ""],
+    ["", "", ""],
+  ];
+  PrintTresEnRayaPage();
   const player1Input = document.getElementById("player1");
   const player2Input = document.getElementById("player2");
   const resetBtn = document.getElementById("reset-btn");
@@ -64,11 +63,7 @@ const resetGame = () => {
     messageDisplay.textContent = "";
     timerDisplay.textContent = "";
     clearInterval(timer);
-    board = [
-      ["", "", ""],
-      ["", "", ""],
-      ["", "", ""],
-    ];
+
     resetTimer();
     generateBoard();
   });
@@ -76,6 +71,7 @@ const resetGame = () => {
 
 // Generar tablero de juego
 export const generateBoard = () => {
+  resetGame();
   const gameContainer = document.getElementById("game-container");
   gameContainer.innerHTML = "";
   board.forEach((row, rowIndex) => {
@@ -96,15 +92,18 @@ const handleCellClick = (event) => {
   const messageDisplay = document.getElementById("message");
   const rowIndex = parseInt(event.target.dataset.row);
   const colIndex = parseInt(event.target.dataset.col);
+  console.log("board", board);
 
   if (board[rowIndex][colIndex] === "") {
     board[rowIndex][colIndex] = getStateMemory("currentPlayer");
     event.target.textContent = getStateMemory("currentPlayer");
     checkWinner();
+    // console.log(getStateMemory("currentPlayer"));
     setStateMemory(
       "currentPlayer",
       getStateMemory("currentPlayer") === "X" ? "O" : "X"
     );
+    //console.log(getStateMemory("currentPlayer"));
     const nextPlayer =
       getStateMemory("currentPlayer") === "X"
         ? getStateMemory("player1Name")
@@ -117,6 +116,11 @@ const handleCellClick = (event) => {
 
 // Verificar si hay un ganador
 const checkWinner = () => {
+  const player1Input = document.getElementById("player1");
+  const player2Input = document.getElementById("player2");
+  const messageDisplay = document.getElementById("message");
+  const timerDisplay = document.getElementById("timer");
+
   const winningCombinations = [
     // Filas
     [
@@ -165,6 +169,7 @@ const checkWinner = () => {
 
   for (const combination of winningCombinations) {
     const [a, b, c] = combination;
+    console.log("board", board);
     if (
       board[a[0]][a[1]] !== "" &&
       board[a[0]][a[1]] === board[b[0]][b[1]] &&
@@ -186,7 +191,17 @@ const checkWinner = () => {
         showConfirmButton: false,
         timer: 2000,
       });
+
+      player1Input.value = "";
+      player2Input.value = "";
+      setStateMemory("currentPlayer", "");
+      messageDisplay.textContent = "";
+      timerDisplay.textContent = "";
+      clearInterval(timer);
+
       resetTimer(); // Reiniciar el temporizador al finalizar la partida
+      generateBoard(); // Reiniciar el tablero al finalizar la partida
+
       return;
     }
   }
@@ -210,6 +225,15 @@ const checkWinner = () => {
       showConfirmButton: false,
       timer: 2000,
     });
+
+    player1Input.value = "";
+    player2Input.value = "";
+    setStateMemory("currentPlayer", "");
+    messageDisplay.textContent = "";
+    timerDisplay.textContent = "";
+    clearInterval(timer);
+
     resetTimer(); // Reiniciar el temporizador al finalizar la partida
+    generateBoard(); // Reiniciar el tablero al finalizar la partida
   }
 };
