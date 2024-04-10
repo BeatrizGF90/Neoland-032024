@@ -90,20 +90,20 @@ export const generateBoard = () => {
 // Manejar clic en celda
 const handleCellClick = (event) => {
   const messageDisplay = document.getElementById("message");
-  const rowIndex = parseInt(event.target.dataset.row);
-  const colIndex = parseInt(event.target.dataset.col);
+  const rowIndex = parseInt(event.target.dataset.row); // obtiene el índice de fila de la celda en la que se hizo clic
+  const colIndex = parseInt(event.target.dataset.col); // obtiene el índice de fila de la celda en la que se hizo clic
   console.log("board", board);
 
   if (board[rowIndex][colIndex] === "") {
-    board[rowIndex][colIndex] = getStateMemory("currentPlayer");
-    event.target.textContent = getStateMemory("currentPlayer");
-    checkWinner();
-    // console.log(getStateMemory("currentPlayer"));
+    //verifica si la celda en la que se hizo clic está vacía en el tablero
+    board[rowIndex][colIndex] = getStateMemory("currentPlayer"); //Se asigna el símbolo del jugador actual a la celda en la que se hizo clic en el tablero.
+    event.target.textContent = getStateMemory("currentPlayer"); //Se actualiza el texto visible en la celda del tablero para reflejar el símbolo del jugador actual.
+    checkWinner(); // chequear si hay un ganador despues del movimiento,si no lo hay sigue con el código.
     setStateMemory(
       "currentPlayer",
-      getStateMemory("currentPlayer") === "X" ? "O" : "X"
+      getStateMemory("currentPlayer") === "X" ? "O" : "X" //Se actualiza el jugador actual para el siguiente movimiento, alternando entre "X" y "O".
     );
-    //console.log(getStateMemory("currentPlayer"));
+    //Se determina quién es el próximo jugador basándose en el jugador actual y los nombres de los jugadores almacenados en la memoria del estado.
     const nextPlayer =
       getStateMemory("currentPlayer") === "X"
         ? getStateMemory("player1Name")
@@ -214,7 +214,6 @@ const checkWinner = () => {
       "Parece que la fuerza no estaba con ninguno",
     ];
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-    // alert(randomMessage);
     Swal.fire({
       position: "center",
       title: `${randomMessage}`,

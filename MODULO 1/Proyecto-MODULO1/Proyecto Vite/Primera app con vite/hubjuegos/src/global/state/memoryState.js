@@ -14,11 +14,8 @@ const dataState = {
   player1Name: "",
   player2Name: "",
   timeLeft: 5, // Tiempo en segundos porque estamos en js
-  // board: [
-  //   ["", "", ""],
-  //   ["", "", ""],
-  //   ["", "", ""],
-  // ],
+  score: 0,
+  gameRunning: false,
 };
 
 export const getStateMemory = (typeOfValue) => {
@@ -65,6 +62,12 @@ export const getStateMemory = (typeOfValue) => {
       return dataState.board;
     case "all":
       return dataState;
+
+    // Variables Wacka Topo-----------------------
+    case "score":
+      return dataState.score;
+    case "gameRunning":
+      return dataState.gameRunning;
   }
 };
 export const setStateMemory = (typeOfValue, setValue) => {
@@ -123,6 +126,14 @@ export const setStateMemory = (typeOfValue, setValue) => {
       break;
     case "board":
       dataState.board = setValue;
+      break;
+
+    // Variables Wacka Topo-----------------------
+    case "score":
+      dataState.score = setValue;
+      break;
+    case "gameRunning":
+      dataState.gameRunning = setValue;
       break;
   }
 };

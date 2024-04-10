@@ -1,5 +1,5 @@
-import { getStateMemory, setStateMemory } from "../../global/state/memoryState";
-import { generateBoard, startTimer } from "../../utils";
+import { PrintButtonTresEnRaya } from "../../components/InputButtonTresEnRaya/InputButtonTresEnRaya";
+
 import "./TresEnRaya.css";
 
 const template = () => `<div id="containerTresEnRaya">
@@ -11,8 +11,7 @@ const template = () => `<div id="containerTresEnRaya">
         <input type="text" id="player1" placeholder="Bea" /><br></br>
         <label for="player2">Nombre del Jugador 2:</label>
         <input type="text" id="player2" placeholder="Sara" /><br></br>
-        <button id="start-btn" class="btn">Inicio</button>
-        <button id="reset-btn" class="btn">Reiniciar</button>
+        <div class="containerButton"></div>
         <button id="info-btn" class="btn">Info</button>
       </div>
       <div id="game-container" class="game-container">
@@ -24,28 +23,8 @@ const template = () => `<div id="containerTresEnRaya">
     </div>`;
 
 // Iniciar juego
-const startGame = () => {
-  const messageDisplay = document.getElementById("message");
-  const timerDisplay = document.getElementById("timer");
-  const player1Input = document.getElementById("player1");
-  const player2Input = document.getElementById("player2");
-  const startBtn = document.getElementById("start-btn");
-  startBtn.addEventListener("click", () => {
-    setStateMemory("player1Name", player1Input.value.trim() || "Jugador 1");
-    setStateMemory("player2Name", player2Input.value.trim() || "Jugador 2");
-    setStateMemory("currentPlayer", "X");
-    messageDisplay.textContent = `Turno de ${getStateMemory("player1Name")}`;
-    timerDisplay.textContent = `Tiempo restante: ${getStateMemory(
-      "timeLeft"
-    )}s`;
-
-    startTimer();
-    generateBoard();
-  });
-};
 
 export const PrintTresEnRayaPage = () => {
   document.querySelector("main").innerHTML = template();
-  startGame();
-  // resetGame();
+  PrintButtonTresEnRaya();
 };

@@ -55,7 +55,7 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
+  font-size: 25px;
   cursor: pointer;
 }
 .btn {
@@ -63,7 +63,7 @@ input {
   border-radius: 10px;
   padding: 10px 15px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   &:hover {
     transform: scale(0.9);
@@ -91,4 +91,193 @@ input {
 }
 #info-btn {
   display: none; /* Oculta el botón de información */
+}
+
+/* ---------------------------responsive -------------------------------- */
+
+@media (max-width: 913px) {
+  .container {
+    box-sizing: content-box;
+    width: 40em;
+    padding: 100px 3px 150px 3px;
+    margin: 22px;
+    background-color: #ffffff;
+    position: absolute;
+    transform: translate(-30%, -30%);
+    left: 35%;
+    top: 32%;
+    border-radius: 0.6em;
+    box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
+    background: rgb(234, 95, 95);
+  }
+  h1 {
+    font-size: 50px;
+  }
+  .input-container {
+    margin-bottom: 2px;
+    font-size: 32px;
+  }
+  .btn {
+    font-size: 24px;
+  }
+  .message {
+    font-size: 30px;
+  }
+
+  .timer {
+    font-size: 30px;
+  }
+  .fondo {
+    background: url(https://res.cloudinary.com/dszkfnjwy/image/upload/v1712648992/pensarTresEnRaya_u2hn2f.gif);
+    background-size: 20%;
+    background-position-x: 50px;
+  }
+}
+
+@media (max-width: 769px) {
+  .container {
+    box-sizing: content-box;
+    width: 30em;
+    padding: 100px 3px 105px 3px;
+    margin: 22px;
+    background-color: #ffffff;
+    position: absolute;
+    transform: translate(-30%, -30%);
+    left: 35%;
+    top: 32%;
+    border-radius: 0.6em;
+    box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
+    background: rgb(234, 95, 95);
+  }
+  h1 {
+    font-size: 40px;
+  }
+  .input-container {
+    margin-bottom: 2px;
+    font-size: 28px;
+  }
+  .btn {
+    font-size: 22px;
+  }
+
+  .fondo {
+    background: url(https://res.cloudinary.com/dszkfnjwy/image/upload/v1712648992/pensarTresEnRaya_u2hn2f.gif);
+    background-size: 45%;
+    background-position-x: -120px;
+  }
+}
+
+@media (max-width: 431px) {
+  .container {
+    box-sizing: content-box;
+    width: 20em;
+    padding: 70px 3px 35px 3px;
+    margin: 22px;
+    background-color: #ffffff;
+    position: absolute;
+    transform: translate(-30%, -30%);
+    left: 30%;
+    top: 32%;
+    border-radius: 0px;
+    box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
+    background: rgb(234, 95, 95);
+  }
+  h1 {
+    font-size: 29px;
+  }
+  .input-container {
+    margin-bottom: 2px;
+    font-size: 22px;
+  }
+
+  .fondo {
+    background: url(https://res.cloudinary.com/dszkfnjwy/image/upload/v1712648992/pensarTresEnRaya_u2hn2f.gif);
+    background-size: 30%;
+    background-position-x: -25px;
+  }
+}
+
+@media (max-width: 415px) {
+  .container {
+    box-sizing: content-box;
+    width: 20em;
+    padding: 70px 3px 35px 3px;
+    margin: 20px;
+    background-color: #ffffff;
+    position: absolute;
+    transform: translate(-30%, -30%);
+    left: 30%;
+    top: 32%;
+    border-radius: 0px;
+    box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
+    background: rgb(234, 95, 95);
+  }
+  h1 {
+    font-size: 26px;
+  }
+  .input-container {
+    margin-bottom: 2px;
+    font-size: 20px;
+  }
+
+  .fondo {
+    background: url(https://res.cloudinary.com/dszkfnjwy/image/upload/v1712648992/pensarTresEnRaya_u2hn2f.gif);
+    background-size: 30%;
+    background-position-x: -20px;
+  }
+}
+
+@media (max-width: 391px) {
+  .container {
+    box-sizing: content-box;
+    width: 18em;
+    padding: 30px 3px 10px 3px;
+    margin: 40px;
+    background-color: #ffffff62;
+    position: absolute;
+    transform: translate(-30%, -30%);
+    left: 25%;
+    top: 35%;
+    border-radius: 0px;
+    box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
+    background: rgb(234, 95, 95);
+  }
+  h1 {
+    font-size: 27px;
+  }
+  .input-container {
+    margin-bottom: 2px;
+    font-size: 18px;
+  }
+  .fondo {
+    background: url(https://res.cloudinary.com/dszkfnjwy/image/upload/v1712648992/pensarTresEnRaya_u2hn2f.gif);
+    background-size: 30%;
+    background-position-x: -8px;
+  }
+}
+
+/* ---------IPHONE  SE --------- */
+@media (max-width: 376px) {
+  .container {
+    box-sizing: content-box;
+    width: 17.5em;
+    padding: 55px 5px 10px 5px;
+    margin: 42px;
+    background-color: #ffffff62;
+    position: absolute;
+    transform: translate(-30%, -30%);
+    left: 23.5%;
+    top: 35%;
+    border-radius: 0px;
+    box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
+    background: rgb(234, 95, 95);
+  }
+  h1 {
+    font-size: 25px;
+  }
+  .fondo {
+    background: url(https://res.cloudinary.com/dszkfnjwy/image/upload/v1712648992/pensarTresEnRaya_u2hn2f.gif);
+    background-size: 30%;
+    background-position-x: -20px;
+  }
 }

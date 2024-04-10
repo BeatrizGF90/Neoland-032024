@@ -38,7 +38,7 @@ export const generador = (cardValues, size = 4) => {
   const gameContainer = document.querySelector(".game-c");
   gameContainer.innerHTML = "";
   cardValues = [...cardValues, ...cardValues];
-  //cardValues.sort(() => Math.random() - 0.5);
+  cardValues.sort(() => Math.random() - 0.5);
 
   for (let i = 0; i < size * size; i++) {
     PrintCardMemory(cardValues[i]);

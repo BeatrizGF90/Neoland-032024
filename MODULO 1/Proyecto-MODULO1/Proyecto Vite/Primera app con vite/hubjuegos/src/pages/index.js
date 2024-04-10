@@ -5,3 +5,4 @@ export * from "./Pokemon/Pokemon";
 export * from "./MemoryGame/Memory";
 export * from "./WackaTopo/Topo";
 export * from "./TresEnRaya/TresEnRaya";
+export * from "./Ahorcado/Ahorcado";

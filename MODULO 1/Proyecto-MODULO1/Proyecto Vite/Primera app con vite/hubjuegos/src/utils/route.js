@@ -7,6 +7,7 @@ import {
   PrintTopoPage,
   PrintTresEnRayaPage,
   printTemplateDashboard,
+  PrintAhorcado,
 } from "../pages";
 
 export const initControler = (pagesRender) => {
@@ -34,6 +35,9 @@ export const initControler = (pagesRender) => {
       break;
     case "TresEnRaya":
       PrintTresEnRayaPage();
+      break;
+    case "Ahorcado":
+      PrintAhorcado();
       break;
   }
 };

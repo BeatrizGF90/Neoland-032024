@@ -41,6 +41,15 @@ const template = () => `
           <h2>TRES EN RAYA</h2>
         </figure>
       </li>
+            <li>
+        <figure id="navigateAhorcado">
+          <img
+            src="https://res.cloudinary.com/dszkfnjwy/image/upload/v1712766664/Ahorcado_wt0gmw.png"
+            alt="go to page Ahorcado"
+          />
+          <h2>AHORCADO</h2>
+        </figure>
+      </li>
     </ul>
   </div>
 `;
@@ -65,6 +74,10 @@ const addEventListeners = () => {
   const navigateTresEnRaya = document.getElementById("navigateTresEnRaya");
   navigateTresEnRaya.addEventListener("click", () => {
     initControler("TresEnRaya");
+  });
+  const navigateAhorcado = document.getElementById("navigateAhorcado");
+  navigateAhorcado.addEventListener("click", () => {
+    initControler("Ahorcado");
   });
 };
 

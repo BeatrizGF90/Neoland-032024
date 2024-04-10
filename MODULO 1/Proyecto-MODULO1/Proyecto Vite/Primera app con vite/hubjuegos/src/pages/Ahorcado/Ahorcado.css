@@ -1,0 +1,12 @@
+#palabra_a_adivinar {
+  height: 3em;
+}
+#palabra_a_adivinar span {
+  vertical-align: bottom;
+  font-size: 2em;
+  border-bottom: 2px solid black;
+  width: 30px;
+  text-align: center;
+  margin-right: 6px;
+  display: inline-block;
+}
