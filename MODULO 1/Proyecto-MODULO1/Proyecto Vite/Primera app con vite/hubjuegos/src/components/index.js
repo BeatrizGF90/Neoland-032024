@@ -8,3 +8,4 @@ export * from "./Spinner/SpinnerButton";
 export * from "./CardMemory/CardMemory";
 export * from "./InputButtonTresEnRaya/InputButtonTresEnRaya";
 export * from "./ButtonLetras/ButtonLetras";
+export * from "./ButtonTopoStart/ButtonTopoStart";

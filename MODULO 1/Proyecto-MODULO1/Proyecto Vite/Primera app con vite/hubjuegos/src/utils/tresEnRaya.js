@@ -167,16 +167,18 @@ const checkWinner = () => {
     ],
   ];
 
+  //inicio un bucle for...of que recorre cada combinación dentro de winningCombinations.
   for (const combination of winningCombinations) {
-    const [a, b, c] = combination;
+    const [a, b, c] = combination; //desestructuro cada combinación en tres variables a, b y c, que representan las posiciones en el tablero que deben ser iguales para determinar un ganador.
     console.log("board", board);
+    //verifico si las posiciones del tablero en las posiciones a, b y c son iguales y diferentes de una cadena vacía.
     if (
       board[a[0]][a[1]] !== "" &&
       board[a[0]][a[1]] === board[b[0]][b[1]] &&
       board[a[0]][a[1]] === board[c[0]][c[1]]
     ) {
       // Hay un ganador
-      const winner = board[a[0]][a[1]];
+      const winner = board[a[0]][a[1]]; //Determino quién es el ganador basado en el valor en la posición "a" del tablero.
       const winnerName =
         winner === "X"
           ? getStateMemory("player1Name")
@@ -206,7 +208,8 @@ const checkWinner = () => {
     }
   }
 
-  // Si no hay ganador y el tablero está lleno, es un empate
+  // Si no hay ganador y el tablero está lleno, es un empate.
+  // con flat convierto esta matriz en un array unidimensional y busco si existe una celda vacía con include "", luego lo niego. (si no existe ninguna celda vacía)
   if (!board.flat().includes("")) {
     const messages = [
       "Casi casi, quiza la próxima vez",
