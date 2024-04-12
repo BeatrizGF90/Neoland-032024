@@ -18,10 +18,13 @@ export const iniciar = (event) => {
   imagen.src = "img/img0.png";
   const btn = id("jugar");
   btn.disabled = true;
-  setStateMemory(0);
+  setStateMemory("cantAciertos", 0);
+  setStateMemory("cantErrores", 0);
 
   const parrafo = id("palabra_a_adivinar");
   parrafo.innerHTML = "";
+  const resultado = id("resultado");
+  resultado.innerHTML = "";
 
   const cant_palabras = palabras.length;
   const valor_al_azar = obtener_random(0, cant_palabras);
@@ -44,9 +47,9 @@ export const clickLetras = (event) => {
   const spans = document.querySelectorAll("#palabra_a_adivinar span");
   const button = event.target;
   button.disabled = true;
-
   const letra = button.innerHTML.toLowerCase();
   const palabra = getStateMemory("palabrita").toLowerCase();
+  const resultado = id("resultado");
 
   let acerto = false;
   for (let i = 0; i < palabra.length; i++) {
@@ -65,18 +68,16 @@ export const clickLetras = (event) => {
   }
 
   if (getStateMemory("cantErrores") == 7) {
-    id("resultado").innerHTML =
-      "Perdiste, la palabra era " + getStateMemory("palabrita");
+    resultado.innerHTML = `Perdiste, la palabra era ${getStateMemory(
+      "palabrita"
+    )}`;
     gameOver();
   } else if (
     getStateMemory("cantAciertos") == getStateMemory("palabrita").length
   ) {
-    id("resultado").innerHTML = "GANASTE!! WIIIIII";
+    resultado.innerHTML = "GANASTE!! WIIIIII";
     gameOver();
   }
-  console.log(
-    "la letra " + letra + " en la palabra " + palabra + " ¿existe?: " + acerto
-  );
 };
 
 export const gameOver = () => {
