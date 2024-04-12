@@ -1,15 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #palabra_a_adivinar {
   height: 3em;
+  display: inline-block;
+  justify-content: center;
+  border-radius: 50%;
+  position: relative;
+  top: -450px;
+}
+#resultado {
+  font-size: 30px;
+  position: relative;
+  top: -425px;
+  left: 625px;
+}
+#jugar {
+  font-size: 30px;
+  position: relative;
+  top: -295px;
+  left: -450px;
 }
 #palabra_a_adivinar span {
   vertical-align: bottom;
   font-size: 2em;
   border-bottom: 2px solid black;
-  width: 30px;
+  width: 50px;
+  height: 50px;
   text-align: center;
-  margin-right: 6px;
+  margin-right: 7px;
   display: inline-block;
+  border-radius: 50%;
+  background-color: rgb(162, 250, 169);
+  gap: 5px;
 }
-.cuerpo {
-  background-image: "img/fondo.png";
+
+.game {
+  background-image: url(https://res.cloudinary.com/dszkfnjwy/image/upload/v1712844218/fondoAhorcado_izocqz.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }

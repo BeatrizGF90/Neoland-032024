@@ -1,13 +1,18 @@
-
-
-#letras{ 
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
+/* Estilos para los botones de letras */
+#letras {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-#letras button{ 
-    width: 28px;
-    padding: 6px 0;
-    text-align: center;
+#letras button {
+  width: 70px;
+  height: 70px;
+  font-size: 30px;
+  padding: 8px;
+  /* text-align: center; */
+  background-color: rgb(241, 151, 151);
+  border-radius: 100%;
+  font-weight: bold;
 }

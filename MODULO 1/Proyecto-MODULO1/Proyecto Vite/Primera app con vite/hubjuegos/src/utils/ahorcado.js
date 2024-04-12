@@ -1,10 +1,5 @@
 import { palabras } from "../data/ahorcado.data";
-import {
-  getInfoAhorcado,
-  setAciertos,
-  setErrores,
-  setPalabrita,
-} from "../global/state/ahorcado.state";
+import { getStateMemory, setStateMemory } from "../global/state/memoryState";
 
 export const id = (str) => {
   return document.getElementById(str);
@@ -23,17 +18,16 @@ export const iniciar = (event) => {
   imagen.src = "img/img0.png";
   const btn = id("jugar");
   btn.disabled = true;
-  setErrores(0);
-  setAciertos(0);
+  setStateMemory(0);
 
   const parrafo = id("palabra_a_adivinar");
   parrafo.innerHTML = "";
 
   const cant_palabras = palabras.length;
   const valor_al_azar = obtener_random(0, cant_palabras);
-  setPalabrita(palabras[valor_al_azar]);
+  setStateMemory("palabrita", palabras[valor_al_azar]);
 
-  const cant_letras = getInfoAhorcado().palabrita.length;
+  const cant_letras = getStateMemory("palabrita").length;
 
   const btnLetras = document.querySelectorAll("#letras button");
   for (let i = 0; i < btnLetras.length; i++) {
@@ -52,34 +46,30 @@ export const clickLetras = (event) => {
   button.disabled = true;
 
   const letra = button.innerHTML.toLowerCase();
-  const palabra = getInfoAhorcado().palabrita.toLowerCase();
+  const palabra = getStateMemory("palabrita").toLowerCase();
 
   let acerto = false;
   for (let i = 0; i < palabra.length; i++) {
     if (letra == palabra[i]) {
       spans[i].innerHTML = letra;
-      let aciertos = parseInt(getInfoAhorcado().cant_aciertos);
-      setAciertos(aciertos++);
+      setStateMemory("cantAciertos", getStateMemory("cantAciertos") + 1);
       acerto = true;
     }
   }
 
   if (acerto == false) {
-    let errores = parseInt(getInfoAhorcado().cant_errores);
-    console.log(errores);
-    setErrores(errores + 1);
-    console.log("errores", getInfoAhorcado().cant_errores);
-    const source = `img/img${getInfoAhorcado().cant_errores}.png`;
+    setStateMemory("cantErrores", getStateMemory("cantErrores") + 1);
+    const source = `img/img${getStateMemory("cantErrores")}.png`;
     const imagen = document.getElementById("imagen");
     imagen.src = source;
   }
 
-  if (getInfoAhorcado().cant_errores == 7) {
+  if (getStateMemory("cantErrores") == 7) {
     id("resultado").innerHTML =
-      "Perdiste, la palabra era " + getInfoAhorcado().palabrita;
+      "Perdiste, la palabra era " + getStateMemory("palabrita");
     gameOver();
   } else if (
-    getInfoAhorcado().cant_aciertos == getInfoAhorcado().palabrita.length
+    getStateMemory("cantAciertos") == getStateMemory("palabrita").length
   ) {
     id("resultado").innerHTML = "GANASTE!! WIIIIII";
     gameOver();

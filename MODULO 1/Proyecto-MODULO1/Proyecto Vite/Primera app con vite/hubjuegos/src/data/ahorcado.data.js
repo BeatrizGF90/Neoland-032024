@@ -1,10 +1,10 @@
 export const palabras = [
-  "manzanas" /* 0 */,
-  "Camiseta" /* 1 */,
-  "caramelos" /* 2 */,
-  "ñoquis" /* 3 */,
-  "streamer" /* 4 */,
-  "twitch" /* 5 */,
-  "murcielago" /* 6 */,
-  "microfono" /* 7 */,
+  "anaconda" /* 0 */,
+  "mandarina" /* 1 */,
+  "caracol" /* 2 */,
+  "Chiringuito" /* 3 */,
+  "Morriña" /* 4 */,
+  "Teleñeco" /* 5 */,
+  "Pachanga" /* 6 */,
+  "Jolgorio" /* 7 */,
 ];

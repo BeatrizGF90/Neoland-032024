@@ -3,14 +3,18 @@ import { PrintButtonLetras } from "../../components";
 import { gameOver, id, iniciar } from "../../utils/ahorcado";
 import "./Ahorcado.css";
 
-const template = () => `<img id="imagen" src="img/img0.png" alt="Ahorcado" />
+const template = () => `<div class="game">
 <div class="cuerpo">
+  <img id="imagen" src="img/img0.png" alt="Ahorcado" />
+
     <p id="palabra_a_adivinar"></p>
     <button id="jugar">Obtener palabra</button>
 
     <p id="resultado"></p>
 
     <div id="letras"></div>
+    </div>
+    </div>
 </div>`;
 
 const listeners = () => {

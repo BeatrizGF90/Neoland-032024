@@ -16,6 +16,9 @@ const dataState = {
   timeLeft: 5, // Tiempo en segundos porque estamos en js
   score: 0,
   gameRunning: false,
+  palabrita: "",
+  cantErrores: 0,
+  cantAciertos: 0,
 };
 
 export const getStateMemory = (typeOfValue) => {
@@ -68,6 +71,14 @@ export const getStateMemory = (typeOfValue) => {
       return dataState.score;
     case "gameRunning":
       return dataState.gameRunning;
+
+    // Variables Ahorcado-----------------------
+    case "palabrita":
+      return dataState.palabrita;
+    case "cantErrores":
+      return dataState.cantErrores;
+    case "cantAciertos":
+      return dataState.cantAciertos;
   }
 };
 export const setStateMemory = (typeOfValue, setValue) => {
@@ -134,6 +145,17 @@ export const setStateMemory = (typeOfValue, setValue) => {
       break;
     case "gameRunning":
       dataState.gameRunning = setValue;
+      break;
+
+    // Variables Ahorcado-----------------------
+    case "palabrita":
+      dataState.palabrita = setValue;
+      break;
+    case "cantErrores":
+      dataState.cantErrores = setValue;
+      break;
+    case "cantAciertos":
+      dataState.cantAciertos = setValue;
       break;
   }
 };
