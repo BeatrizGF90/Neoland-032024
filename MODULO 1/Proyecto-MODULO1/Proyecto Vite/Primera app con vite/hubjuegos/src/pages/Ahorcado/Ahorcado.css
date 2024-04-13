@@ -4,25 +4,38 @@
   box-sizing: border-box;
 }
 
-#palabra_a_adivinar {
-  height: 3em;
-  display: inline-block;
+.game {
+  background-image: url(https://res.cloudinary.com/dszkfnjwy/image/upload/v1712844218/fondoAhorcado_izocqz.png);
+  display: flex;
   justify-content: center;
-  border-radius: 50%;
-  position: relative;
-  top: -450px;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
-#resultado {
-  font-size: 30px;
-  position: relative;
-  top: -425px;
-  left: 625px;
+
+.cuerpo {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.642);
+  border-radius: 10px;
 }
+
+#imagen {
+  max-width: 100%;
+  height: auto;
+}
+
+#palabra_a_adivinar {
+  font-size: 20px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+#resultado,
 #jugar {
-  font-size: 30px;
-  position: relative;
-  top: -295px;
-  left: -450px;
+  font-size: 2.5em;
+  margin-bottom: 20px;
 }
 #palabra_a_adivinar span {
   vertical-align: bottom;
@@ -38,11 +51,27 @@
   gap: 5px;
 }
 
-.game {
-  background-image: url(https://res.cloudinary.com/dszkfnjwy/image/upload/v1712844218/fondoAhorcado_izocqz.png);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+#letras {
+  margin-top: 20px;
+}
+
+#letras button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 2em;
+}
+
+@media only screen and (max-width: 600px) {
+  #resultado,
+  #jugar {
+    font-size: 1.5em;
+  }
+
+  #palabra_a_adivinar {
+    font-size: 1.2em;
+  }
+
+  #letras button {
+    font-size: 1em;
+  }
 }

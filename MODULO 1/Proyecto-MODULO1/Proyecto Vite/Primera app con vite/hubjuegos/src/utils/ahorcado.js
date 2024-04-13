@@ -68,14 +68,14 @@ export const clickLetras = (event) => {
   }
 
   if (getStateMemory("cantErrores") == 7) {
-    resultado.innerHTML = `Perdiste, la palabra era ${getStateMemory(
+    resultado.innerHTML = `Pasemos un tupido velo😶‍🌫️, la palabra era ${getStateMemory(
       "palabrita"
-    )}`;
+    )} 🤦‍♀️`;
     gameOver();
   } else if (
     getStateMemory("cantAciertos") == getStateMemory("palabrita").length
   ) {
-    resultado.innerHTML = "GANASTE!! WIIIIII";
+    resultado.innerHTML = "WINNER WINNER CHICKEN DINNER 😎";
     gameOver();
   }
 };
