@@ -1,14 +1,19 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
-dotenv.config();
+const { connect } = require("./src/utils/db");
 
-//Creamos servidor web
-
+// creamos el servidor web
 const app = express();
 
-//traemos del env la variable de entorno del puerto
-//!esta variable tiene que ser siempre en mayúsculas
+// vamos a configurar dotenv para poder utilizar las variables d entorno del .env
+dotenv.config();
+
+//! conectamos con la base de datos
+connect();
+
+//!traemos del env la variable de entorno del puerto
+//esta variable tiene que ser siempre en mayúsculas
 const PORT = process.env.PORT;
 console.log(PORT);
 
