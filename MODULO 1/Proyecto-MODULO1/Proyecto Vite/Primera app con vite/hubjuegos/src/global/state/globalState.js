@@ -1,15 +1,12 @@
-// globalstate.js ------> global/state/globalstate.js
-
 // -----------------------------------------------------------------------------------
 //-----------------> INICIALIZACION EN LAZY DEL ESTADO ------------------------------
 // -----------------------------------------------------------------------------------
 
-/** Siempre lo primero que se hace es crear los estados y le damos su valor
- *  inicial antes de modificarlos */
+/** Primero creamos los estados y le damos su valor inicial antes de modificarlos */
 
 /* este estado de currrentUser es el usuario que se encuenta actualmente logado en la aplicacion
 tiene una inicializacion en lazy. Esto quiere decir que mira si tenemos algun valor en le local storage 
-si tenemos un valor lo vamos asignar al valor de currentUser sino será un string vacio
+si tenemos un valor lo asignamos al valor de currentUser sino será un string vacio
 
 
 ESTO SE HACE PORQUE SI RECARGO LA PAGINA LOS ESTADOS VUELVEN A SU VALOR INCIAL, si no tubieramos esto
@@ -22,9 +19,7 @@ const currentUser = {
     : "",
 };
 
-/*------------------> este estado se encarga de incluir los datos de user con sus favoritos y es
-practicamente igual que lo que se settea en el local storage para guardar sus favoritos
- */
+/* este estado se encarga de incluir los datos de user con sus favoritos  */
 
 let userData = localStorage.getItem(currentUser.name)
   ? JSON.parse(localStorage.getItem(currentUser.name))
@@ -35,7 +30,7 @@ let userData = localStorage.getItem(currentUser.name)
     };
 
 // ------------------> DATA GLOBAL DE LA APLICACION--------
-/**En este caso es donde se van a guardar los datos que vengan de las API y que vamos a utilizarlos en
+/**Aquí se van a guardar los datos que vengan de las API y que vamos a utilizarlos en
  * los diferentes apartados de la app: por ejemplo si tuvieramos dos paginas una de pokemon y otra de ricky
  * morty en este caso en cada clave guardariamos el valor de los datos de cada página.
  */
@@ -69,7 +64,6 @@ export const setData = (data, page) => {
   switch (page) {
     case "Pokemon":
       dataGlobal.pokemon = data;
-
       break;
 
     default:
@@ -87,22 +81,31 @@ export const getData = (page) => {
   return dataGlobal;
 };
 
-// -------------------SET y GET  dde userData  --------------------------
+// -------------------SET y GET  de userData  --------------------------
 
 export const setUserData = (data) => {
-  console.log(".....metiendo datos en el contexto");
   userData.fav = data?.fav;
   userData.name = data?.name;
   userData.token = data?.token;
+
+  /* userData.fav = data?.fav -->Actualiza la propiedad fav del objeto userData con el valor de data.fav, 
+  si data tiene una propiedad fav.*/
+
   /**En este caso no solo setea sino que tambien lo modifica en el localStorage
    * Como se ve lo mete con una forma especial para que en caso de corresponder
    * el nombre que introduce en el login con el que hay en el localStorage se pueda
    * recuperar los datos de los favoritos.
    */
   const stringUser = JSON.stringify(userData);
+  /* Convierte el objeto userData a una cadena JSON utilizando JSON.stringify(). 
+  Esto es para almacenar objetos complejos en localStorage, ya que localStorage solo puede almacenar datos en formato de cadena.*/
   localStorage.removeItem(`${currentUser.name}`);
+  /*Elimina un elemento del localStorage con la clave ${currentUser.name}. la cual es una variable que contiene el nombre de un usuario. 
+   Esto asegura que se elimine cualquier información previa asociada con ese usuario antes de guardar los nuevos datos.*/
   console.log(userData.name);
   localStorage.setItem(`${currentUser.name}`, stringUser);
+  /* Almacena la cadena JSON stringUser en el localStorage con la clave ${currentUser.name}. Esto guarda los datos actualizados del usuario 
+  en el localStorage bajo la clave que corresponde al nombre del usuario.*/
 };
 
 export const getUserData = () => {

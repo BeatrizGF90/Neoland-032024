@@ -10,83 +10,173 @@
 }
 
 .buttonFilter {
-  width: 5rem;
-  height: 2rem;
+  width: 6rem;
+  height: 2.5rem;
   border-radius: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 27px;
 }
 
 .buttonFilter.grass {
   border: 3px solid #63bb5b;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 10px 8px #63bb5b;
+    -moz-box-shadow: 0px 0px 10px 8px #63bb5b;
+    box-shadow: 0px 0px 10px 8px #63bb5b;
+  }
 }
 
 .buttonFilter.bug {
   border: 3px solid #8fc12c;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 10px 8px #8fc12c;
+    -moz-box-shadow: 0px 0px 10px 8px #8fc12c;
+    box-shadow: 0px 0px 10px 8px #8fc12c;
+  }
 }
 
 .buttonFilter.dark {
   border: 3px solid #5a5366;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 10px 8px #5a5366;
+    -moz-box-shadow: 0px 0px 10px 8px #5a5366;
+    box-shadow: 0px 0px 10px 8px #5a5366;
+  }
 }
 
 .buttonFilter.dragon {
   border: 3px solid #0a6dc4;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 10px 8px #0a6dc4;
+    -moz-box-shadow: 0px 0px 10px 8px #0a6dc4;
+    box-shadow: 0px 0px 10px 8px #0a6dc4;
+  }
 }
 
 .buttonFilter.electric {
   border: 3px solid #f3d13b;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 10px 8px #f3d13b;
+    -moz-box-shadow: 0px 0px 10px 8px #f3d13b;
+    box-shadow: 0px 0px 10px 8px #f3d13b;
+  }
 }
 
 .buttonFilter.fairy {
   border: 3px solid #ec8fe6;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 10px 8px #ec8fe6;
+    -moz-box-shadow: 0px 0px 10px 8px #ec8fe6;
+    box-shadow: 0px 0px 10px 8px #ec8fe6;
+  }
 }
 
 .buttonFilter.fighting {
   border: 3px solid #ce4068;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 10px 8px #ce4068;
+    -moz-box-shadow: 0px 0px 10px 8px #ce4068;
+    box-shadow: 0px 0px 10px 8px #ce4068;
+  }
 }
 
 .buttonFilter.fire {
   border: 3px solid #ff9b54;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 10px 8px #ff9b54;
+    -moz-box-shadow: 0px 0px 10px 8px #ff9b54;
+    box-shadow: 0px 0px 10px 8px #ff9b54;
+  }
 }
 
 .buttonFilter.flying {
   border: 3px solid #8fa8dd;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 10px 8px #8fa8dd;
+    -moz-box-shadow: 0px 0px 10px 8px #8fa8dd;
+    box-shadow: 0px 0px 10px 8px #8fa8dd;
+  }
 }
 
 .buttonFilter.ghost {
   border: 3px solid #5269ac;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 10px 8px #5269ac;
+    -moz-box-shadow: 0px 0px 10px 8px #5269ac;
+    box-shadow: 0px 0px 10px 8px #5269ac;
+  }
 }
 
 .buttonFilter.ground {
   border: 3px solid #d97746;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 10px 8px #d97746;
+    -moz-box-shadow: 0px 0px 10px 8px #d97746;
+    box-shadow: 0px 0px 10px 8px #d97746;
+  }
 }
 
 .buttonFilter.ice {
   border: 3px solid #74cec1;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 10px 8px #74cec1;
+    -moz-box-shadow: 0px 0px 10px 8px #74cec1;
+    box-shadow: 0px 0px 10px 8px #74cec1;
+  }
 }
 
 .buttonFilter.normal {
   border: 3px solid #9099a1;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 10px 8px #9099a1;
+    -moz-box-shadow: 0px 0px 10px 8px #9099a1;
+    box-shadow: 0px 0px 10px 8px #9099a1;
+  }
 }
 
 .buttonFilter.poison {
   border: 3px solid #aa6ac8;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 10px 8px #aa6ac8;
+    -moz-box-shadow: 0px 0px 10px 8px #aa6ac8;
+    box-shadow: 0px 0px 10px 8px #aa6ac8;
+  }
 }
 
 .buttonFilter.psychic {
   border: 3px solid #f97176;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 10px 8px #f97176;
+    -moz-box-shadow: 0px 0px 10px 8px #f97176;
+    box-shadow: 0px 0px 10px 8px #f97176;
+  }
 }
 
 .buttonFilter.rock {
   border: 3x solid #c7b78b;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 10px 8px #c7b78b;
+    -moz-box-shadow: 0px 0px 10px 8px #c7b78b;
+    box-shadow: 0px 0px 10px 8px #c7b78b;
+  }
 }
 
 .buttonFilter.steel {
   border: 3x solid #5a8ea1;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 10px 8px #5a8ea1;
+    -moz-box-shadow: 0px 0px 10px 8px #5a8ea1;
+    box-shadow: 0px 0px 10px 8px #5a8ea1;
+  }
 }
 
 .buttonFilter.water {
   border: 3px solid #4d91d5;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 10px 8px #4d91d5;
+    -moz-box-shadow: 0px 0px 10px 8px #4d91d5;
+    box-shadow: 0px 0px 10px 8px #4d91d5;
+  }
 }

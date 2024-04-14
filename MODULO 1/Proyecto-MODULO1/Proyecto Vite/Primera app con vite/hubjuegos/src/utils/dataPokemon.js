@@ -6,11 +6,10 @@ import { typePokemon } from "./typePokemon";
 
 let dataGlobal;
 export const dataPokemon = async () => {
-  /** esta funcion se encarga de trar los datos de pokemon de la api
-   * y hacer push en un array vacio
-   * Para esto utiliza el servico de getById recibiendo
-   * el id del pokemon que quiere obtener del endPoint
-   * de la API
+  /** esta funcion se encarga de traer los datos de pokemon de la api
+   * y hacer push en un array vacio.
+   * Para esto utiliza el servico de getById recibiendo el id del
+   * pokemon que quiere obtener del endPoint de la API.
    */
   const rawData = [];
 
@@ -46,13 +45,11 @@ export const filterPokemon = (filterDataInputButton, donde) => {
   /// filterDataInputButton:  la palabra que nos sirve para filtrar
 
   switch (donde) {
-    /** este switch nos va a permitir que esta funcion de
-     * filter nos sirva tanto si es para el
-     * input de busqueda como si es para los
-     * botones de busqueda por tipo
-     * Recordar que los pokemon pueden tener dos tipos
-     * y que algunos tipos como el volador pueden estar
-     * en su posion 1 del array de type
+    /** este switch nos va a permitir que esta funcion de filter nos sirva
+     * tanto si es para el input de busqueda como si es para los botones
+     * de busqueda por tipo.
+     * Recordar que los pokemon pueden tener dos tipos y que algunos tipos
+     * como el volador pueden estar en su posion 1 del array de type.
      */
     case "type":
       {
@@ -62,9 +59,9 @@ export const filterPokemon = (filterDataInputButton, donde) => {
             .includes(filterDataInputButton.toLowerCase())
         );
 
-        /** En caso de que en la primera posicion no se
-         * encuentre ese tipo de pokemon tendremos que buscarlos
-         * en la posicion 1 del array de los tipos de pokemons
+        /* En caso de que en la primera posicion no se
+           encuentre ese tipo de pokemon tendremos que buscarlos
+           en la posicion 1 del array de los tipos de pokemons
          */
 
         if (filterData.length === 0) {
@@ -74,9 +71,9 @@ export const filterPokemon = (filterDataInputButton, donde) => {
               .includes(filterDataInputButton.toLowerCase())
           );
 
-          /** Una vez filtrada la info la mandamos a
-           * la funcion paginar para que renderice el numero de elementos
-           * que le decimos como parametrom, en este caso tres
+          /* Una vez filtrada la info la mandamos a la funcion
+             paginar para que renderice el numero de elementos
+             que le decimos como parametro, en este caso tres
            */
 
           Paginacion(filterData, 3);
@@ -94,24 +91,18 @@ export const filterPokemon = (filterDataInputButton, donde) => {
             .toLowerCase()
             .includes(filterDataInputButton.toLowerCase())
         );
-        /** Para cuando la palabra del input sea vacia
-         *  en ese caso saldran todos los pokemon
-         * porque el filter de un string vacio
-         * lo contienen todos los nombres por lo cual
-         * directamente mandamos a paginacion
-         * que pinte de 25 en 25 para cada pagina
+        /** Cuando la palabra del input sea vacia, saldran todos los pokemon.
+         *  El filter de un string vacio lo contienen todos los nombres por lo
+         *  cual directamente mandamos a paginacion que pinte de 25 en 25 para
+         *  cada pagina.
          *
+         *  En caso contrario, que la palabra del input tenga un valor superior
+         *  a un array vacio lo que haremos en el else es mandar la paginacion de
+         *  5 en 5.
          *
-         * En caso contrario que la palabra del input
-         * tenga un valor superior a un array vacion en
-         * ese caso lo que haremos en el else
-         * es mandar la paginacion de 5 en 5
-         *
-         *
-         * Recorardar que aunque yo le mande a
-         * paginacion que me lo haga de 5 en 5, si el numero dde paginas
-         * que salen son 1 o menores en esee caso
-         * no se renderiza los botones de la paginacion.
+         * Recorardar que aunque yo le mande a paginacion que me lo haga de 5 en 5,
+         * si el numero de paginas que salen son 1 o menores, en ese caso no se
+         *  renderiza los botones de la paginacion.
          *
          * Asi conseguimos que la paginacion sea dinamica
          */

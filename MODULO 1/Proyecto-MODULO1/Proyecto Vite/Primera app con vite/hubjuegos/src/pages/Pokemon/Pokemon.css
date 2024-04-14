@@ -20,6 +20,7 @@
   height: 2rem;
   border-radius: 5px;
   padding: 10px;
+  font-size: 20px;
 }
 
 #spinner {
@@ -35,11 +36,12 @@
   margin: 0 0 3rem 0;
   gap: 0.5rem;
   & button {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border-radius: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 30px;
   }
 }

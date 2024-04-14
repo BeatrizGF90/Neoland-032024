@@ -38,12 +38,12 @@ const dataService = async () => {
    * esto es porque antes de que esten los datos en caso de no
    * tenelos que se pinten los spinner de carga
    *
-   *
-   * Una vez los tenemos hacemos destructuring de pokemonData y los type (LOS TIPOS)
+   *  Una vez los tenemos hacemos destructuring de pokemonData y los type (LOS TIPOS)
    */
   const getDataPokemon = getData("Pokemon");
-
+  /* Llamamos a la función getData con el argumento "Pokemon" y asignamos el resultado a la variable getDataPokemon*/
   const { pokemonData, type } = getDataPokemon;
+  /* desestructuración de objetos en JavaScript, extraemos propiedades específicas (pokemonData y type) de getDataPokemon */
 
   /**borramos los spinner porque ya tenemos los datos y una
    * vez los hemos borrado mandamos a pintar los botones
@@ -53,9 +53,9 @@ const dataService = async () => {
   PrintButton(type);
   document.getElementById("spinnerButtonFilter").innerHTML = "";
 
-  /** Una vez hemos pintado todo le inyectamos al input
-   * sus escuchadores y mandamos a paginacion a pintar los
-   * 25 primeros elementos
+  /** Una vez hemos pintado todo, le inyectamos al input
+   * sus escuchadores y mandamos a paginacion pintar los
+   * 25 primeros elementos.
    */
   addListeners();
   Paginacion(pokemonData, 25);
@@ -69,15 +69,12 @@ const addListeners = () => {
 
   const inputPokemon = document.getElementById("inputPokemon");
   inputPokemon.addEventListener("input", (e) => {
-    /** este evento lo unico que hace es mandar el valor del input y el tipo de filtro que tiene que
-     * hacer a la funcion que se encarga de filtrar.
-     *
-     * Recordar este funcion nos sirve gracias al switch
-     * para el filtrado por name como para el filtrado por
-     * button con los tipos de pokemons
-     */
     filterPokemon(e.target.value, "name");
   });
+  /** este evento lo unico que hace es mandar el valor del input y el tipo de filtro que tiene que
+   * hacer a la funcion que se encarga de filtrar. Este funcion nos sirve gracias al switch para el
+   * filtrado por name como para el filtrado por button con los tipos de pokemons.
+   */
 };
 
 // ------------------------------------------------------------------------------

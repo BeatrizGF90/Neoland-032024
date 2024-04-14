@@ -1,26 +1,20 @@
-//CardPokemons.js ------> src/components/CardPokemons/CardPokemons.js
 import { getUserData, setUserData } from "../../global/state/globalState";
 import "./CardPokemons.css";
 
 export const CardsPokemons = (data) => {
   /** Nos traemos los datos del usuario para asi poder saber cual son los pokemons que tenemos como
-   * favoritos y asi luego poder pintar los corazones en rojo de los que son favoritos
-   */
+   * favoritos y asi poder pintar los corazones en rojo de los que son favoritos  */
+
   const appUser = getUserData();
-
-  /** borramos la galeria en caso de tener algun elemento y asi que no se vaya duplicando */
-
   document.getElementById("galleryPokemon").innerHTML = "";
 
-  /** De los datos completos mandados a pintar por este componente CardsPokemons los recorremos
-   *
+  /** Recorremos los datos completos mandados a pintar por este componente CardsPokemons.
    * Lo primero que le vamos a hacer es una clase que sea dinamica para cada uno de los tipos de pokemon
    * y luego hacemos un template con un figure con el pokemon que vamos a renderizar
-   *
-   *
    * Pero antes de eso fijaros que el boton del favorite que es un span tiene una clase dinamica con un
-   * ternario en el que en caso de incluir el id de este pokemon en el aray de fav del usuario del contesto
-   * el cual se encuentra logado ponerle la clase de  like y luego por css todos los que tengan like
+   * ternario que verifica si el id del Pokémon, convertido a una cadena de texto usando toString(), está
+   * incluido en el array appUser.fav.en el que en caso de incluir el id de este pokemon en el array de
+   * fav del usuario del contesto devuelve true y le pone la clase like y luego por css todos los que tengan like
    * le ponemos el corazon en rojo, sino se queda el simbolo del corazon en su color original
    */
   data.map((pokemon) => {
@@ -49,7 +43,7 @@ const addListeners = (data) => {
    */
   const appUser = getUserData();
 
-  /** apuntamos a tods los span que son realmente los corazones. Los recorremos todos los span y le metemos
+  /** apuntamos a todos los span que son realmente los corazones. Recorremos todos los span y le metemos
    * el evento de tipo click
    */
   const spanAll = document.querySelectorAll("span");
@@ -60,8 +54,8 @@ const addListeners = (data) => {
        *
        *
        * Esto lo va a saber gracias al usuario que hay en el contesto y su array de fav ya que lo que hace en
-       * este if es comprobar que ese array de fav ver si incluye o no el id del padre del span el cual es el figure
-       * que recordar en el template metemos el id del pokemon como id del figure
+       * este if es comprobar que ese array de fav incluye o no el id del padre del span el cual es el figure
+       * que recordar en el template metemos el id del pokemon como id del figure.
        */
       if (appUser.fav.includes(e.target.parentNode.id)) {
         /** Si lo incluye entonces tenemos que sacarlo del array para eso nos traemos de nuevo los datos del user
@@ -70,7 +64,7 @@ const addListeners = (data) => {
         const appUser = getUserData();
 
         const newFavArray = [];
-        /** cremoa un array nuevo donde metermos todos los id de los pokemons que estaban como fav menos
+        /** creamos un array nuevo donde metermos todos los id de los pokemons que estaban como fav menos
          * el que queremos quitar como favorito
          */
         appUser.fav.forEach((id) => {
@@ -90,7 +84,9 @@ const addListeners = (data) => {
           fav: newFavArray,
         });
 
-        /** inportante a ese span quitarle la clase like para asi se le quite el rojo */
+        /** inportante a ese span quitarle la clase like para asi se le quite el rojo.
+         * .toggle() alterna la visibilidad de un elemento HTML. Cuando se aplica a un elemento visible, lo oculta; y si está oculto, lo muestra.
+         */
         span.classList.toggle("like");
       } else {
         /** En caso de no incluir ese id en el arrray de fav del user logado del contesto lo que tenemos que hacer es meter el id de ese figire
