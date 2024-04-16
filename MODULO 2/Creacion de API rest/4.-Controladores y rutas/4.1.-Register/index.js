@@ -28,7 +28,7 @@ const PORT = process.env.PORT;
 app.use(cors()); // Para utilizar la librería
 
 //! -----------------ROUTAS ---------------------------------
-app.use("api/v1/users/", UserRoutes);
+app.use("/api/v1/users/", UserRoutes);
 
 //! ----------------limitaciones de cantidad en el back end
 app.use(express.json({ limit: "5mb" }));
