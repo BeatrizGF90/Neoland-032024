@@ -1,4 +1,7 @@
 /* style.css*/
+:root {
+  --background-color: rgb(234, 95, 95);
+}
 
 * {
   padding: 0;

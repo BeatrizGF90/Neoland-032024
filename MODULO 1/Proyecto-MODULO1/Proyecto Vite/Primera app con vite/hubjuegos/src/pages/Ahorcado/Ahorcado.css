@@ -41,8 +41,8 @@
   vertical-align: bottom;
   font-size: 2em;
   border-bottom: 2px solid black;
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 65px;
   text-align: center;
   margin-right: 7px;
   display: inline-block;
@@ -66,12 +66,22 @@
   #jugar {
     font-size: 1.5em;
   }
+  #imagen {
+    max-width: 60%;
+    height: auto;
+  }
 
   #palabra_a_adivinar {
     font-size: 1.2em;
   }
 
-  #letras button {
-    font-size: 1em;
+  #palabra_a_adivinar span {
+    font-size: 25px;
+    width: 35px;
+    height: 35px;
+  }
+  #resultado {
+    font-size: 20px;
+    margin-bottom: 10px;
   }
 }

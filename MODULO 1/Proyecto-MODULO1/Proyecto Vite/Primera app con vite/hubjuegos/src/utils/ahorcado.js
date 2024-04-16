@@ -68,7 +68,7 @@ export const clickLetras = (event) => {
   }
 
   if (getStateMemory("cantErrores") == 7) {
-    resultado.innerHTML = `Pasemos un tupido velo😶‍🌫️, la palabra era ${getStateMemory(
+    resultado.innerHTML = `Corramos un tupido velo😶‍🌫️, la palabra era ${getStateMemory(
       "palabrita"
     )} 🤦‍♀️`;
     gameOver();

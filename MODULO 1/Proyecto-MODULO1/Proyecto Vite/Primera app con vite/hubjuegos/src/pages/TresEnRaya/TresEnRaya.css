@@ -3,7 +3,7 @@
   text-align: center;
   margin-top: 15px;
   margin-bottom: 15px;
-  background: rgb(234, 95, 95);
+  background-color: var(--background-color);
   box-sizing: content-box;
   width: 36em;
   height: 36em;

@@ -15,7 +15,7 @@ const template = () => `<div id="containerTresEnRaya">
         <button id="info-btn" class="btn">Info</button>
       </div>
       <div id="game-container" class="game-container">
-        <!-- Aquí se generará el tablero de juego dinámicamente -->
+        <!-- Aquí generaré el tablero de juego dinámicamente -->
       </div>
 
       <div id="timer" class="timer">Tiempo restante: 5s</div>

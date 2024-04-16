@@ -35,7 +35,7 @@ export const startTimer = () => {
 };
 
 // Función para reiniciar el temporizador
-export const resetTimer = () => {
+const resetTimer = () => {
   clearInterval(timer);
   setStateMemory("timeLeft", 5);
   const timerDisplay = document.getElementById("timer");
