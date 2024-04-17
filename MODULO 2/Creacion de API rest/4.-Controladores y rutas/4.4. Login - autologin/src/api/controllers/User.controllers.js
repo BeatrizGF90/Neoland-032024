@@ -1,5 +1,6 @@
-//! ------------------------------librerias--------------------------------
-
+//! -----------------------------------------------------------------------
+//? ------------------------------librerias--------------------------------
+//! -----------------------------------------------------------------------
 const nodemailer = require("nodemailer");
 const validator = require("validator");
 const bcrypt = require("bcrypt");
@@ -7,12 +8,14 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-//! ------------------------------modelos----------------------------------
-
+//! -----------------------------------------------------------------------
+//? ------------------------------modelos----------------------------------
+//! -----------------------------------------------------------------------
 const User = require("../models/User.model");
 
-//! ------------------------utils - middlewares - states ------------------
-
+//! -----------------------------------------------------------------------
+//? ------------------------utils - middlewares - states ------------------
+//! -----------------------------------------------------------------------
 const { deleteImgCloudinary } = require("../../middleware/files.middleware");
 const randomCode = require("../../utils/randomCode");
 const sendEmail = require("../../utils/sendEmail");
@@ -21,10 +24,16 @@ const {
   setTestEmailSend,
 } = require("../../state/state.data");
 const setError = require("../../helpers/handle-error");
+const { generateToken } = require("../../utils/token");
 
-//------------------->CRUD = "Crear, Leer, Actualizar y Borrar"
-
-//! ----------------------------REGISTER LARGO EN CODIGO ------------------------
+//------------------->CRUD es el acrónimo de "Crear, Leer, Actualizar y Borrar"
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ */
+//! -----------------------------------------------------------------------------
+//? ----------------------------REGISTER LARGO EN CODIGO ------------------------
+//! -----------------------------------------------------------------------------
 
 const registerLargo = async (req, res, next) => {
   // capturamos la imagen nueva subida a cloudinary
@@ -102,8 +111,9 @@ const registerLargo = async (req, res, next) => {
     return next(error);
   }
 };
-
-//! ----------------------------REGISTER CORTO EN CODIGO ------------------------
+//! -----------------------------------------------------------------------------
+//? ----------------------------REGISTER CORTO EN CODIGO ------------------------
+//! -----------------------------------------------------------------------------
 
 const registerUtil = async (req, res, next) => {
   let catchImg = req.file?.path;
@@ -321,7 +331,159 @@ const resendCode = async (req, res, next) => {
       return res.status(404).json("User not found");
     }
   } catch (error) {
-    return next(setError(500, error.message || "Error general send code")); // función setError está en helpers/handle-error
+    return next(setError(500, error.message || "Error general send code"));
+  }
+};
+
+//! ------------------------------------------------------------------------
+//? -------------------------- CHECK NEW USER------------------------------
+//! ------------------------------------------------------------------------
+
+const checkNewUser = async (req, res, next) => {
+  /* Pasos a seguir:
+  1) -> email y el codigo de confirmacion
+  2) -> buscar el user en la bdo con el email 
+  3) -> comparar los codigos
+  4) -> hacer un update y cambiar la clave check
+
+
+  Error: 
+   -> el email no exista  en el back
+   -> los codigos no son iguales
+   -> que falle la update
+  */
+
+  try {
+    //! nos traemos de la req.body el email y codigo de confirmation
+    const { email, confirmationCode } = req.body;
+
+    const userExists = await User.findOne({ email });
+
+    if (!userExists) {
+      //!No existe----> 404 de no se encuentra
+      return res.status(404).json("User not found");
+    } else {
+      // cogemos que comparamos que el codigo que recibimos por la req.body y el del userExists es igual
+      if (confirmationCode === userExists.confirmationCode) {
+        try {
+          await userExists.updateOne({ check: true });
+
+          //! hacer un test para ver si a actualizado la clave
+
+          // hacemos un testeo de que este user se ha actualizado correctamente, hacemos un findOne
+          const updateUser = await User.findOne({ email });
+
+          // este finOne nos sirve para hacer un ternario que nos diga si la propiedad vale true o false
+          return res.status(200).json({
+            testCheckOk: updateUser.check == true ? true : false,
+          });
+        } catch (error) {
+          return res.status(404).json(error.message);
+        }
+      } else {
+        ///! el else de cuando los codigos no son iguales
+        try {
+          /// En caso dec equivocarse con el codigo lo borramos de la base datos y lo mandamos al registro
+          await User.findByIdAndDelete(userExists._id);
+
+          // borramos la imagen
+          deleteImgCloudinary(userExists.image);
+
+          // devolvemos un 200 con el test de ver si el delete se ha hecho correctamente
+          return res.status(200).json({
+            userExists,
+            check: false,
+
+            // test en el runtime sobre la eliminacion de este user
+            delete: (await User.findById(userExists._id))
+              ? "error delete user"
+              : "ok delete user",
+          });
+        } catch (error) {
+          return res
+            .status(404)
+            .json(error.message || "error general delete user");
+        }
+      }
+    }
+  } catch (error) {
+    // siempre en el catch devolvemos un 500 con el error general
+    return next(setError(500, error.message || "General error check code"));
+  }
+};
+
+//! -----------------------------------------------------------------------------
+//? --------------------------------LOGIN ---------------------------------------
+//! -----------------------------------------------------------------------------
+
+const login = async (req, res, next) => {
+  /**
+   *
+   * Pasos a seguir:
+   * 1) body vamos a recibir el email y la contraseña
+   * 2) comprobar con el email que exista en la mongo db
+   * 3)comprobamos que la contraseña coincida con la base de datos
+   *  - comparamos una contraseña sin encrytar con un encritada -> bcrypt
+   * 4) Si con iguales genero un token --> con la funcion generateToken  de los util el token
+   *
+   * Errores:
+   * -> que el usuario no exista en la db
+   * -> que la contraseña no coincida
+   * -> que la generacion del token falle
+   
+   */
+
+  try {
+    const { email, password } = req.body;
+    const userDB = await User.findOne({ email });
+
+    if (userDB) {
+      // compareSync --> compara dos contraseñar una sin encryptar y otra encriptada
+      if (bcrypt.compareSync(password, userDB.password)) {
+        const token = generateToken(userDB._id, email);
+        return res.status(200).json({
+          user: userDB,
+          token,
+        });
+      } else {
+        return res.status(404).json("password dont match");
+      }
+    } else {
+      return res.status(404).json("User no register");
+    }
+  } catch (error) {
+    return next(error.message);
+  }
+};
+
+//! -----------------------------------------------------------------------------
+//? --------------------------------AUTOLOGIN ---------------------------------------
+//! -----------------------------------------------------------------------------
+
+const autoLogin = async (req, res, next) => {
+  /** ES IGUAL QUE EL LOGIN SOLO QUE AHORA COMPARO DOS CONTRASEÑAS ENCRYPTADA
+   * Y NO HHACE FALTA EL COMPARESYNC
+   * */
+  try {
+    const { email, password } = req.body;
+    const userDB = await User.findOne({ email });
+
+    if (userDB) {
+      // comparo dos contraseñas encriptadas con el ==
+      if (password == userDB.password) {
+        const token = generateToken(userDB._id, email);
+        return res.status(200).json({
+          user: userDB,
+          token,
+        });
+      } else {
+        return res.status(404).json("password dont match");
+      }
+    } else {
+      return res.status(404).json("User no register");
+    }
+  } catch (error) {
+    return next(error);
   }
 };
 
@@ -331,4 +493,7 @@ module.exports = {
   registerWithRedirect,
   sendMailRedirect,
   resendCode,
+  checkNewUser,
+  login,
+  autoLogin,
 };
