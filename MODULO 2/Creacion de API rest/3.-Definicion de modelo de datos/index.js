@@ -21,11 +21,12 @@ const PORT = process.env.PORT;
 // libreria para configurar el acceso a la appi, hay que traer la librería (lo tengo en la línea 3)
 app.use(cors()); // Para utilizar la librería
 
-//! -----------------ROUTAS ---------------------------------
-// realizado en paso 4.
 //! ----------------limitaciones de cantidad en el back end
 app.use(express.json({ limit: "5mb" }));
 app.use(express.urlencoded({ limit: "5mb", extended: false }));
+
+//! -----------------ROUTAS ---------------------------------
+// realizado en paso 4.
 
 //! ----------------ERRORES GENERALES Y RUTA NO ENCONTRADA
 
