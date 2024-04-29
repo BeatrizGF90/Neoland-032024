@@ -50,7 +50,9 @@ const UserSchema = new mongoose.Schema(
     charactersFav: [{ type: mongoose.Schema.Types.ObjectId, ref: "Character" }], // array de personajes fav
     followers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }], // array de usuarios que le sigues
     followed: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }], // arrays de usuarios que sigue
-    chats: [{ type: mongoose.Schema.Types.ObjectId, ref: "Chat" }], // array de mensajes privados
+    chats: [
+      { type: mongoose.Schema.Types.ObjectId, ref: "Chat" },
+    ] /* array de mensajes privados*/,
     banned: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }], // para si te quiere bannear la página, bannear es bloquear porque el usuario ha hecho algo que no debía
     // blockedByApp : { type: Boolean, default: false },
     commentsPublicByOther: [
