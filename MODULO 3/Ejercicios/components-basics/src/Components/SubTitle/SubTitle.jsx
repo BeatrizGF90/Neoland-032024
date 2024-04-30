@@ -1,3 +1,5 @@
-export const SubTitle = ({ texto }) => {
-  return <h2>{texto}</h2>;
+import "./SubTitle.css";
+
+export const SubTitle = ({ texto, className }) => {
+  return <h2 className={className}>{texto}</h2>;
 };

@@ -1,3 +1,5 @@
-export const Title = ({ texto }) => {
-  return <h1>{texto}</h1>;
+import "./Title.css";
+
+export const Title = ({ texto, className }) => {
+  return <h1 className={className}>{texto}</h1>;
 };

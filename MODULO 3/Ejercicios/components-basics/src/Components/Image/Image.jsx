@@ -1,8 +1,10 @@
-export const Image = () => {
+import "./Image.css";
+
+export const Image = ({ src, description }) => {
   return (
-    <img
-      src="https://res.cloudinary.com/dszkfnjwy/image/upload/v1712648992/pensarTresEnRaya_u2hn2f.gif"
-      alt="Gon personaje anime"
-    ></img>
+    <figure>
+      <h3>{description}</h3>
+      <img src={src} alt={description}></img>;
+    </figure>
   );
 };

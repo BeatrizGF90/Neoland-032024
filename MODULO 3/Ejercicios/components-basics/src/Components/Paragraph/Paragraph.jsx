@@ -1,3 +1,5 @@
-export const Paragraph = ({ texto }) => {
-  return <p>{texto}</p>;
+import "./Paragraph.css";
+
+export const Paragraph = ({ texto, className }) => {
+  return <p className={className}>{texto}</p>;
 };
