@@ -18,6 +18,7 @@ const App = () => {
     setCount((value) => (value + 1) % 25); // esto hace que cualdo llegue a 24 vuelva a empezar. Si pongo 30 volvería a empezar cuando llegue a 29
     console.log("estado debajo de la actualizacion", count);
   };
+
   const toggleValor = () => {
     setValor(!valor); //Cambia el valor de false a true y viceversa.
   };
@@ -89,7 +90,7 @@ const App = () => {
         )}
       </div>
 
-      <h1>Vite + React</h1>
+      <h2>Contador:</h2>
       <div className="card">
         <button onClick={() => actualizarEstado()}>count is {count}</button>
         <p>
