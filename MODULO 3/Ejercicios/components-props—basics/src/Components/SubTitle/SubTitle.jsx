@@ -1,5 +1,10 @@
 import "./SubTitle.css";
 
 export const SubTitle = ({ texto, className }) => {
-  return <h2 className={className}>{texto}</h2>;
+  return (
+    <h2 className={className}>
+      {texto}
+      <br></br>
+    </h2>
+  );
 };

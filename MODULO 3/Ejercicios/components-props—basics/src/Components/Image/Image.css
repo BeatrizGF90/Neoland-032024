@@ -2,8 +2,7 @@ figure {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-
+  flex-wrap: wrap;
   margin: 10px;
   & img {
     width: 200px;
@@ -14,5 +13,7 @@ figure {
   & h3 {
     text-align: center;
     margin: 10px;
+    display: flex;
+    flex-direction: column;
   }
 }

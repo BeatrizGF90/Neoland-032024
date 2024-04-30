@@ -11,7 +11,7 @@ import "./App.css";
 import { Parrafo } from "./Components";
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const [valor, setValor] = useState(false); //para el apartado 5
 
   const actualizarEstado = () => {
@@ -19,10 +19,12 @@ const App = () => {
     console.log("estado debajo de la actualizacion", count);
   };
 
+  // 5. Crea un botón que modifique un valor de false a true y renderice un contenido cuando este valor se modifique.
   const toggleValor = () => {
     setValor(!valor); //Cambia el valor de false a true y viceversa.
   };
 
+  // 2. Renderiza “Buenos días” [6-12] , “Buenas tardes” [13-19] o “Buenas noches”[20-5] según el valor numérico asignado.
   const print = () => {
     if (count > 5 && count < 13) {
       return <Parrafo texto={"Buenos días"} />;
@@ -33,7 +35,10 @@ const App = () => {
     }
   };
 
+  // 3. Recorrer los elementos de un array y renderizalos ⇒ Si os da un error de keys en la consola podéis usar el index como `key={index}` .
   const capitales = ["Madrid", "Lisboa", "París", "Berlín"];
+
+  // 4. Mappea un array de objetos para pintarlos.
   const personas = [
     {
       nombre: "Cris",
@@ -64,13 +69,16 @@ const App = () => {
         </a>
       </div>
 
+      {/* 2. Renderiza “Buenos días” [6-12] , “Buenas tardes” [13-19] o “Buenas noches”[20-5] según el valor numérico asignado.*/}
       {print()}
 
+      {/* 3. Recorrer los elementos de un array y renderizalos ⇒ Si os da un error de keys en la consola podéis usar el index como `key={index}` .*/}
       <h2>Capitales:</h2>
       {capitales.map((capital, index) => (
         <Parrafo key={index} texto={capital} />
       ))}
 
+      {/* 4. Mappea un array de objetos para pintarlos.*/}
       <h2>Personas:</h2>
       {personas.map((persona, index) => (
         <div key={index}>
@@ -80,6 +88,7 @@ const App = () => {
         </div>
       ))}
 
+      {/* 5. Crea un botón que modifique un valor de false a true y renderice un contenido cuando este valor se modifique.*/}
       <h2>Valor:</h2>
       <div className="card">
         <button onClick={toggleValor}>Toggle valor:</button>

@@ -6,7 +6,15 @@
 main {
   min-height: 70vh;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+div {
+  min-height: 70vh;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* justify-content: center;
+  align-items: center; */
 }

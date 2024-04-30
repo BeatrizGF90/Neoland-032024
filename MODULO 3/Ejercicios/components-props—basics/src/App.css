@@ -3,3 +3,6 @@ main {
   gap: 1rem;
   margin: 1rem;
 }
+.app {
+  width: 100%;
+}
