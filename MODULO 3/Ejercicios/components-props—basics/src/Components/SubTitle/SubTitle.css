@@ -1,8 +1,8 @@
 .SubTitle {
   text-align: center;
-  margin: 20px;
-  color: blue;
+  margin: 20px auto;
+  color: black;
   font-size: 35px;
-  text-decoration: underline;
   width: 100%;
+  background-color: rgba(82, 90, 89, 0.112);
 }

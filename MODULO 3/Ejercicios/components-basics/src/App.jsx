@@ -8,7 +8,6 @@
 // 4. Estila cada uno de ellos haciendo uso de CSS Modules → hoja de estilo asociada al componente.
 // 5. OPCIONAL: Exporta los componentes en un `index.js` e importalos en `App.jsx`.
 
-import { useState } from "react";
 import React from "react";
 import { Title, SubTitle, Image, Paragraph, Header } from "./Components";
 
@@ -23,6 +22,7 @@ const App = () => {
           texto={"This is a example components with ReactJS"}
         />
         <Image
+          description={"Gon"}
           src={
             "https://res.cloudinary.com/dszkfnjwy/image/upload/v1712648992/pensarTresEnRaya_u2hn2f.gif"
           }

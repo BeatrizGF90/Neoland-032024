@@ -1,12 +1,12 @@
 footer {
   min-height: 10vh;
-  background-color: black;
-  /* background-image: url("https://res.cloudinary.com/dszkfnjwy/image/upload/v1712319774/Picachu_smwz1b.png"); */
+  background-color: rgba(54, 229, 242, 0.167);
   & .Paragraph {
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 10vh;
+    font-size: 20px;
   }
 }

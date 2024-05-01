@@ -1,7 +1,7 @@
 .Title {
   text-align: center;
-  margin: 30px;
+  margin: 30px auto;
   font-size: 40px;
-  background-color: rgba(127, 255, 212, 0.365);
-  border-radius: 50%;
+  background-color: rgba(9, 20, 19, 0.61);
+  color: white;
 }

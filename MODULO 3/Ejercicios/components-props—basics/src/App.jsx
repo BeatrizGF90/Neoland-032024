@@ -20,13 +20,9 @@ const App = () => {
       <Header />
       <main>
         <div className="App">
-          <Title className={"Title"} texto={"Personajes de anime"} />
+          <Title className={"Title"} texto={"PERSONAJES DE ANIME"} />
 
           {Gallery()}
-          <Paragraph
-            className={"Paragraph"}
-            texto={"Espero es mi segundo ejercicio de react"}
-          />
         </div>
       </main>
       <Footer />

@@ -1,6 +1,4 @@
-.Paragraph {
-  text-align: center;
-  margin-top: 60px;
-  font-size: 20px;
-  color: blue;
+p {
+  font-size: 30px;
+  color: red;
 }
