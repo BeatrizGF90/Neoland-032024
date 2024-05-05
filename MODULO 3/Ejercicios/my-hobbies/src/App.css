@@ -1,0 +1,42 @@
+.ContainerGeneral {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 1rem;
+  gap: 0.5rem;
+  background-color: rgba(127, 255, 212, 0.176);
+  font-family: "Cinzel", serif;
+}
+h2 {
+  background-color: rgba(127, 255, 212, 0.459);
+}
+p {
+  font-size: large;
+}
+
+.containerRead {
+  background-color: rgba(127, 255, 212, 0.076);
+  width: 275px;
+  margin: 10px;
+}
+.containerSports {
+  background-color: rgba(127, 255, 212, 0.076);
+  width: 275px;
+  margin: 10px;
+}
+.containerMovies {
+  background-color: rgba(127, 255, 212, 0.076);
+  width: 275px;
+  margin: 10px;
+}
+.containerLanguages {
+  background-color: rgba(127, 255, 212, 0.076);
+  width: 250px;
+  margin: 10px;
+}
+.containerSongs {
+  background-color: rgba(127, 255, 212, 0.076);
+  width: 225px;
+  margin: 10px;
+}
