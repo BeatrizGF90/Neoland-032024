@@ -4,29 +4,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background-color: rgba(54, 229, 242, 0.039); */
 }
-
-/* .container {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center; */
-/* & .figure {
-    gap: 2rem;
-    margin: 2rem;
-  }
-  & h2 {
-    font-weight: bold;
-    text-align: center;
-    margin: 0.5rem;
-  }
-  & img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-  }
-  & h3 {
-    text-align: center;
-    margin: 0.5rem;
-  } */

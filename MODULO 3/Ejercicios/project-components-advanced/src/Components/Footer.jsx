@@ -1,6 +1,7 @@
 import "./Footer.css";
 import { Paragraph } from "./Paragraph";
 export const Footer = () => {
+  console.log(Footer);
   return (
     <footer>
       <Paragraph className={"Paragraph"} texto={"SEPTIMO EJERCICIO BEA 🦹‍♀️"} />

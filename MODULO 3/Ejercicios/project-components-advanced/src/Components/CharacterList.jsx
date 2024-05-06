@@ -15,7 +15,7 @@ export const CharacterList = () => {
       let data = await fetch(`https://rickandmortyapi.com/api/character/`).then(
         (res) => res.json()
       );
-
+      console.log("data", data);
       setCharacterList(data.results);
     })();
   }, []);
@@ -32,36 +32,18 @@ export const CharacterList = () => {
     <>
       <SubTitle
         className={"SubTitle"}
-        texto={"PERSONAJES ALIVE RICK AND MORTY - ALIVE"}
+        texto={"PERSONAJES ALIVE RICK AND MORTY - ALIVE 👽"}
       />
       <ul>
-        <ItemListAlive />
-        {/* 
-          <div className="container">
-            {aliveCharacters.map((character) => (
-            <li>
-              <Card key={character.id} character={character} />
-            ))}
-            </li>
-          </div>
-         */}
+        <ItemListAlive aliveCharacters={aliveCharacters} />
       </ul>
 
       <SubTitle
         className={"SubTitle"}
-        texto={"PERSONAJES ALIVE RICK AND MORTY - DEAD"}
+        texto={"PERSONAJES ALIVE RICK AND MORTY - DEAD 🪦"}
       />
       <ul>
-        <ItemListDead />
-        {/* 
-          <div className="container">
-            {deadCharacters.map((character) => (
-              <li>
-              <Card key={character.id} character={character} />
-            ))}
-            </li>
-          </div>
-         */}
+        <ItemListDead deadCharacters={deadCharacters} />
       </ul>
     </>
   );

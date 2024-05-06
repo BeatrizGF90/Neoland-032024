@@ -1,14 +1,14 @@
 import "./ItemList.css";
 import { Card } from "./Card";
 
-export const ItemListDead = () => {
+export const ItemListDead = ({ deadCharacters }) => {
   return (
-    <li>
-      <div className="container">
-        {deadCharacters.map((character) => (
+    <div className="container">
+      {deadCharacters.map((character) => (
+        <li>
           <Card key={character.id} character={character} />
-        ))}
-      </div>
-    </li>
+        </li>
+      ))}
+    </div>
   );
 };

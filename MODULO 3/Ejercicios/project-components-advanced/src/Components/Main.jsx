@@ -2,7 +2,10 @@ import { CharacterList } from "./CharacterList";
 import "./Main.css";
 
 export const Main = () => {
-  <main>
-    <CharacterList />
-  </main>;
+  console.log(Main);
+  return (
+    <main>
+      <CharacterList />
+    </main>
+  );
 };
