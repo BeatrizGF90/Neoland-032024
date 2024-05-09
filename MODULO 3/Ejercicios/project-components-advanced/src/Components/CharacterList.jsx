@@ -1,16 +1,14 @@
 import "./CharacterList.css";
-
 import { useState } from "react";
-import React from "react";
-// import { Card } from "./Card";
 import { SubTitle } from "./SubTitle";
 import { ItemListAlive } from "./ItemListAlive";
 import { ItemListDead } from "./ItemListDead";
+import { useEffect } from "react";
 
 export const CharacterList = () => {
-  const [characterList, setCharacterList] = React.useState([]);
+  const [characterList, setCharacterList] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     (async () => {
       let data = await fetch(`https://rickandmortyapi.com/api/character/`).then(
         (res) => res.json()
@@ -32,7 +30,7 @@ export const CharacterList = () => {
     <>
       <SubTitle
         className={"SubTitle"}
-        texto={"PERSONAJES ALIVE RICK AND MORTY - ALIVE 👽"}
+        texto={"PERSONAJES RICK AND MORTY - ALIVE 👽"}
       />
       <ul>
         <ItemListAlive aliveCharacters={aliveCharacters} />
@@ -40,7 +38,7 @@ export const CharacterList = () => {
 
       <SubTitle
         className={"SubTitle"}
-        texto={"PERSONAJES ALIVE RICK AND MORTY - DEAD 🪦"}
+        texto={"PERSONAJES RICK AND MORTY - DEAD 🪦"}
       />
       <ul>
         <ItemListDead deadCharacters={deadCharacters} />

@@ -1,0 +1,10 @@
+#cardId{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#cardId h2{
+    text-align: center;
+}
+

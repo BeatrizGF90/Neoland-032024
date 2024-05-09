@@ -1,0 +1,9 @@
+header{
+    min-height: 20vh;
+    background-color: rgba(0, 0, 0, 0.067);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+   
+}

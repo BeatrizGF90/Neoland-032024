@@ -7,6 +7,8 @@
   gap: 0.5rem;
   background-color: rgba(127, 255, 212, 0.176);
   font-family: "Cinzel", serif;
+  width: 100vw;
+  min-height: 100vh;
 }
 h2 {
   background-color: rgba(127, 255, 212, 0.459);

@@ -1,0 +1,10 @@
+main {
+  gap: 2rem;
+  margin: 2rem;
+  min-height: 65vh;
+}
+.SubTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

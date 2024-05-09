@@ -14,7 +14,16 @@
 
 import { useEffect, useState } from "react";
 import "./App.css";
-import { Footer, Header, Input } from "./Components";
+import {
+  Footer,
+  Header,
+  Input,
+  Main,
+  Nav,
+  Paragraph,
+  SubTitle,
+  Title,
+} from "./Components";
 import { dataGallery } from "./Data";
 import { Gallery } from "./Pages";
 
@@ -58,9 +67,13 @@ const App = () => {
 
   return (
     <>
-      <Header />
-      {/* {console.log(valueInput)} */}
-      <main>
+      <Header>
+        <Nav />
+        <Title className={"TitleHeader"} texto={"ANIME"} />
+        <Title className={"TitleHeader"} texto={"⛩️"} />
+      </Header>
+      <Main>
+        <SubTitle className={"TitleMain"} texto={"PERSONAJES"} />
         <Input
           setValueInput={setValueInput}
           value={
@@ -70,8 +83,10 @@ const App = () => {
           }
         />
         <Gallery data={data} />
-      </main>
-      <Footer />
+      </Main>
+      <Footer>
+        <Paragraph className={"Paragraph"} texto={"TERCER EJERCICIO BEA 🐙"} />
+      </Footer>
     </>
   );
 };

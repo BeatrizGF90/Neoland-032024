@@ -1,0 +1,12 @@
+.containerHome {
+  min-height: 65vh;
+  width: 100vw;
+  margin: 100px 0px;
+  & h2,
+  p,
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,13 @@
+header {
+  min-height: 20vh;
+  width: 100%;
+  background-color: rgba(54, 229, 242, 0.167);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  & .Title {
+    display: flex;
+    font-size: 40px;
+  }
+}

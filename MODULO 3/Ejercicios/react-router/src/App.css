@@ -1,0 +1,10 @@
+main {
+  min-height: 70vh;
+  padding: 30px;
+}
+h1,
+h2,
+p,
+nav {
+  text-align: center;
+}

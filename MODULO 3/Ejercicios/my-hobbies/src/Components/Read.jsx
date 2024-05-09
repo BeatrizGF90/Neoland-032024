@@ -38,25 +38,3 @@ export const Read = ({ List }) => {
     </>
   );
 };
-
-{
-  /* ASÍ NO RECORRE EL OBJETO MY HOBBIES
-          {read.map((value, index) => (
-          <div key={index}>
-            <p>Title: {value.title}</p>
-            <p>
-              Author: {value.authorName} {value.authorSurname}
-            </p>
-            <p>Gender: {value.gender}</p>
-            <p>Date of Publication: {value.dateOfPublication}</p>
-            <p>Author Birthdate: {value.authorDate}</p>
-            <img src={value.bookImage} alt={value.title} />
-            <p>Other Books:</p>
-            <ul>
-              {value.otherBooks.map((book, i) => (
-                <li key={i}>{book.info}</li>
-              ))}
-            </ul>
-          </div>
-        ))} */
-}
