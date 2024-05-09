@@ -1,24 +1,15 @@
 import "./Personajes.css";
-
-import { useState } from "react";
 import { getAll } from "../Services/ricky.endPoint.service";
-import { useEffect } from "react";
-import { ItemListDead, SubTitle } from "../Components";
+import { Figure, SubTitle } from "../Components";
+import { useFetching } from "../Hooks";
 
 export const Dead = () => {
-  const [characters, setCharacters] = useState([]);
-  const [res, setRes] = useState({});
-
-  useEffect(() => {
-    (async () => {
-      setRes(await getAll());
-    })();
-  }, []);
-
-  const deadCharacters = characters.filter(
+  const { state } = useFetching(getAll);
+  const deadCharacters = state.data?.results.filter(
     (character) => character.status === "Dead"
   );
-
+  console.log("dead", deadCharacters);
+  console.log("state", state);
   return (
     <>
       <SubTitle
@@ -26,7 +17,9 @@ export const Dead = () => {
         texto={"PERSONAJES RICK AND MORTY - DEAD 🪦"}
       />
       <div id="containerGallery">
-        <ItemListDead deadCharacters={deadCharacters} />
+        {deadCharacters?.map((item) => (
+          <Figure data={item} key={item?.id} />
+        ))}
       </div>
     </>
   );

@@ -5,8 +5,6 @@ export * from "./Paragraph";
 export * from "./SubTitle";
 export * from "./Title";
 export * from "./Figure";
-export * from "./ItemListAlive";
-export * from "./ItemListDead";
 export * from "./CardById";
 export * from "./Spinner";
 export * from "./Input";
