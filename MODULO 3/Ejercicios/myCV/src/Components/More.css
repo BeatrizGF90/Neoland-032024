@@ -1,0 +1,30 @@
+.customList {
+  list-style-type: none; /* Oculta el marcador por defecto de la lista */
+}
+
+.customList li::before {
+  content: ""; /* Agrega contenido antes de cada elemento li */
+  display: inline-block;
+  margin-right: 5px; /* Espacio entre el ícono y el texto */
+}
+
+.more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.moreCard {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  border-radius: 12px;
+  background-color: rgba(240, 248, 255, 0.241);
+  & h2 {
+    color: black;
+    text-shadow: 2px 2px rgba(240, 248, 255, 0.241);
+  }
+  & p {
+    color: #0b0089;
+    text-decoration: none;
+  }
+}
